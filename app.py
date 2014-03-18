@@ -17,7 +17,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 def index():
     return render_template("index.html")
 
-@app.route("/login")
+@app.route("/login", methods=["POST"])
 def login():
     # Login form should be handled by view controller.
     # This handler will accept post data and confirm if the user is authenticated.
@@ -28,7 +28,7 @@ def logout():
     # Destroy the current session.
     pass
 
-@app.route("/signup")
+@app.route("/signup", methods=["POST"])
 def signup():
     # Signup form should be handled by view controller.
     # This handler will accept post data, create a new user and confirm.
