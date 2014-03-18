@@ -1,11 +1,11 @@
-import bcrypt
+#import bcrypt
 
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String, Date
 from sqlalchemy import ForeignKey
 from sqlalchemy.orm import relationship, backref
+from base import Base
 
-Base = declarative_base()
 
 class User(Base):
     __tablename__ = "users"
