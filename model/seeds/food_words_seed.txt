@@ -1,0 +1,532 @@
+菠菜 | spinach 
+蕃茄 | tomato 
+红萝卜 | carrot 
+胡萝卜 | (bot.) the carrot 
+姜 | (surname) / ginger 
+卷心菜 | the cabbage 
+辣椒 | hot pepper / chili 
+马铃薯 | potato 
+茄子 | eggplant; aubergine; Guinea squash 
+青豆 | green beans in gen 
+秋葵 | (bot.) the hibiscus, Abelmoschous esculentus 
+生菜 | lettuce 
+豌豆 | pea (Pisum sativum) 
+芜菁 | turnip 
+香菜 | parsley 
+洋芋 | potato 
+葱 | scallion / green onion 
+甘蓝 | (bot.) Brassica oleracea, and its derivatives the cauliflower, Brussels sprouts, and kale 
+红薯 | sweet potato 
+黄瓜 | cucumber 
+芥菜 | the mustard plant, leaf mustard 
+苦瓜 | (bot.) bitter gourd, Momordica charanta 
+芦笋 | asparagus 
+南瓜 | pumpkin 
+芹菜 | celery 
+青椒 | green pepper 
+山药 | the yam 
+甜菜 | beet 
+莴苣 | lettuce 
+西红柿 | tomato 
+洋葱 | onion 
+玉米 | corn / maize 
+大肠 | the large intestine 
+肺 | lung 
+横膈膜 | (physiol.) the diaphragm 
+静脉 | vein 
+膀胱 | urine bladder 
+气管 | (physiol.) the windpipe, trachea; the bronchial tubes 
+肾脏 | kidney 
+腺 | gland 
+心脏 | heart 
+喉咙 | throat 
+脑 | brain 
+舌 | tongue 
+食管 | (physiol.) the oesophagus 
+咽喉 | the throat; (fig.) vital defense area, strategic point 
+动脉 | artery 
+肝脏 | liver 
+甲状腺 | thyroid gland 
+阑尾 | appendix (in human body) 
+脾脏 | the pancreas 
+神经 | nerve 
+胃 | stomach 
+小肠 | the intestines 
+喉结 | Adam's' apple 
+喉头 | throat / larynx 
+上颚 | roof of mouth 
+声带 | vocal cord(s) 
+咽 | narrow pass / throat 
+淋巴系统 | lymphatic system 
+菠萝 | pineapple 
+甘蔗 | cane 
+金橘 | kumquat 
+李子 | plum 
+芒果 | mango 
+木瓜 | papaya 
+葡萄 | grape 
+柿子 | persimmon 
+西瓜 | watermelon 
+香瓜 | muskmelon; also different varieties of sweet melon 
+椰子 | coconut 
+柚子 | pomelo / shaddock 
+草莓 | strawberry 
+哈密瓜 | Hami melon (a variety of muskmelon) 
+梨 | pear 
+荔枝 | litchi fruit 
+猕猴桃 | Chinese gooseberry / Kiwi fruit 
+苹果 | apple 
+石榴 | the pomegranate 
+桃子 | peach 
+香蕉 | banana 
+杏 | apricot 
+樱桃 | cherry 
+枣 | jujube 
+胸肌 | None 
+骨 | bone 
+脊柱 | the spinal column 
+腱 | gristle 
+肋骨 | rib 
+软骨 | cartilage 
+胸骨 | sternum / breastbone 
+胸椎 | thoracic vertebrae 
+髌骨 | kneecap / patella 
+关节 | joint 
+肩胛骨 | scapula / shoulder blade 
+颈椎 | cervical vertebra 
+韧带 | ligament 
+锁骨 | collarbone / clavicle 
+胸廓 | (physiol.) the thorax 
+背 | carry on one's back 
+肚 | tripe 
+胳膊 | arm 
+脚 | a kick / foot / role 
+颈 | neck 
+髋 | pelvis / pelvic 
+女性 | the female sex 
+乳房 | the breasts 
+手臂 | arm 
+头 | head 
+臀 | butt / buttocks 
+膝盖 | knee 
+胸 | chest / bosom / heart / mind / thorax 
+肘 | elbow / pork shoulder 
+大腿 | thigh 
+腹 | abdomen / stomach / belly 
+肩 | shoulder 
+脚踝 | ankle 
+胯 | thigh / leg 
+男性 | male 
+乳头 | nipple 
+手 | hand / convenient 
+手腕 | skill / finesse 
+腿 | leg 
+膝 | knee 
+小腿 | (physiol.) the calf 
+腰 | waist 
+鼻孔 | nostril 
+唇 | lip; lips 
+耳垂 | lower ear lobe 
+酒窝 | dimple 
+毛孔 | pore 
+皮肤 | skin 
+雀斑 | freckle 
+下巴 | chin 
+眼睛 | eye 
+痣 | birthmark / mole 
+嘴 | mouth 
+鼻子 | nose 
+耳朵 | ear 
+睫毛 | lash 
+脸颊 | cheek 
+眉毛 | eyebrow 
+前额 | forehead 
+头发 | hair (on the head) 
+牙齿 | dental / tooth 
+眼皮 | eyelid 
+皱纹 | wrinkle 
+嘴巴 | mouth 
+粥 | Porridge 
+蛋炒饭 | Fried Rice With Egg 
+水饺 | Dumplings 
+皮蛋 | 100-year Egg 
+油条 | Fried Bread Stick 
+豆浆 | Soy Milk 
+烧饼 | Clay Oven Rolls 
+馒头 | Steamed Buns, Steamed Bread 
+麻辣面 | Spicy Hot Noodles 
+蛋花汤 | Egg And Vegetable Soup 
+油豆腐 | Oily Bean Curd 
+虾球 | Shrimp Balls 
+春卷 | Spring Rolls 
+肉丸 | Meatball 
+火锅 | Hot Pot 
+鱼丸汤 | Fish Ball Soup 
+臭豆腐 | Stinky Tofu 
+豌豆 | Green Pea 
+荷兰豆 | Snow Pea 
+兵豆 | Lentil 
+扁豆 | Dolichos Bean 
+鹰嘴豆 | Chick Pea 
+眉豆 | Black-Eyed Pea 
+鹊豆 | Lablab Bean 
+四季豆 | Green Bean 
+豇豆 | Yardlong Bean 
+黄荚种菜豆 | Wax Bean 
+红豆 | Azuki Bean 
+红花菜豆 | Scarlet Runner Bean 
+绿豆 | Mung Bean 
+利马豆 | Lima Bean 
+斑豆 | Pinto Bean 
+红芸豆 | Red Kidney Bean 
+黑豆 | Black Bean 
+笛豆 | Flageolet Bean 
+大豆 | Soybean 
+矿泉水 | Mineral Water 
+可乐 | Cola 
+雪碧 | Sprite 
+啤酒 | Beer 
+橙汁 | Orange Juice 
+冰茶 | Iced Tea 
+热茶 | Hot Tea 
+咖啡 | Coffee 
+浓咖啡 | Espresso 
+冰咖啡 | Iced Coffee 
+拿铁咖啡 | Caffelatte 
+卡布奇诺 | Cappuccino 
+葡萄酒 | Wine 
+红葡萄酒 | Red Wine 
+白葡萄酒 | White Wine 
+豆浆 | Soy Milk 
+果汁 | Fruit Juice 
+香槟 | Champagne 
+白酒 | Chinese White liquor 
+威士忌 | Whiskey 
+清酒 | Sake 
+鸡尾酒 | Cocktail 
+沙冰 | Smoothie 
+白兰地 | Brandy 
+酒精饮料 | Liquor 
+蒜蓉面包 | Garlic Bread 
+大面包 | Loaf 
+粗麦面包 | Rye Bread 
+吐司面包 | Toast Bread 
+小麦面包 | Wheat Bread 
+白面包 | White Bread 
+牛角面包 | Croissant 
+黑麦面包 | Black Rye Bread 
+面包圈 | Bagel 
+法式长棍面包 | Baguette 
+皮塔饼 | Pita 
+无酵面饼 | unleavened bread 
+丹麦粗麦面包 | Danish Rye Bread 
+杂粮面包 | Multigrain Bread 
+犹太教白面包 | Challah 
+美式玉米面包 | American Corn Bread 
+德国粗麦面包 | German Rye Bread 
+俄式粗麦黑面包 | Russian Pumpernickel 
+全麦面包 | Wholemeal Bread 
+多纳圈 | Donut 
+小圆面包 | Bun 
+法式吐司面包 | French Toast 
+帕尔马干酪 | Parmesan 
+瑞士干酪 | Swiss Cheese 
+美国干酪 | American Cheese 
+切达干酪 | Cheddar Cheese 
+埃门塔尔干酪 | Emmenthal 
+蒙特里杰克干酪 | Monterey Jack Cheese 
+酪农干酪 | Cottage Cheese 
+莫泽雷勒干酪 | Mozzarella 
+乳清干酪 | Ricotta 
+罗马诺干酪 | Romano 
+罗克福尔干酪 | Roquefort 
+斯提耳顿干酪 | Stilton 
+戈尔根朱勒干酪 | Gorgonzola 
+丹麦青纹干酪 | Danish Blue 
+卡门贝干酪 | Camembert 
+布里干酪 | Brie Cheese 
+菲达奶酪 | Feta Cheese 
+格鲁耶尔干酪 | Gruyere Cheese 
+肯德基 | Kentucky Fried Chicken 
+星巴克 | Starbucks 
+DQ冰淇淋 | Dairy Queen 
+吉野家 | Yoshinoya 
+麦当劳 | McDonald's 
+米斯特比萨 | Mr. Pizza 
+硬石餐厅 | Hard Rock Café 
+橙子 | Orange 
+草莓 | Strawberry 
+香蕉 | Banana 
+西瓜 | Watermelon 
+苹果 | Apple 
+葡萄 | Grape 
+芒果 | Mango 
+菠萝 | Pineapple 
+柠檬 | Lemon 
+桃子 | Peach 
+荔枝 | Lychee 
+樱桃 | Cherry 
+蓝莓 | Blueberry 
+猕猴桃 | Kiwifruit 
+油桃 | Nectarine 
+花生 | Peanut 
+梨子 | Pear 
+李子 | Plum 
+蟠桃 | Flat Peach 
+橘子 | Tangerine 
+杏仁 | Almond 
+杏 | Apricot 
+鳄梨 | Avocado 
+黑加仑 | Black Currant 
+黑莓 | Blackberry 
+哈密瓜 | Cantaloupe 
+腰果 | Cashew Nut 
+栗子 | Chestnut 
+枸橼 | Citron 
+椰子 | Coconut 
+小红莓 | Cranberry 
+无花果 | Fig 
+醋栗 | Gooseberry 
+西柚 | Grapefruit 
+榛子 | Hazelnut 
+白兰瓜 | Honeydew Melon 
+菠萝蜜 | Jackfruit 
+青柠檬 | Lime 
+澳洲坚果 | Macadamia Nut 
+香瓜 | Muskmelon 
+橄榄 | Olive 
+木瓜 | Papaya 
+百香果 | Passion Fruit 
+美洲山核桃 | Pecan 
+开心果 | Pistachio 
+石榴 | Pomegranate 
+梅子 | Prune 
+榅桲 | Quince 
+覆盆子 | Raspberry 
+红加仑 | Red Currant 
+核桃 | Walnut 
+藜谷 | Quinoa 
+黑麦 | Rye 
+斯卑尔脱小麦 | Spelt  
+小麦 | Wheat 
+大米 | White Rice 
+玉米 | Corn 
+荞麦 | Buckwheat 
+大麦 | Barley 
+糙米 | Brown Rice 
+小扁豆 | Lentil 
+小米 | Millet 
+腰果 | Cashew 
+开心果 | Pistachio 
+坚果 | Nut 
+果干 | Dried Fruit 
+松子 | Pine Nut 
+花生 | Peanut 
+榛子 | Hazelnut 
+美洲山核桃 | Pecan 
+杏仁 | Almond 
+核桃 | Walnut 
+栗子 | Chestnut 
+澳洲坚果 | Macadamia 
+无花果 | Fig 
+梅子 | Prune 
+葡萄干 | Raisin 
+椰子 | Coconut 
+蜜饯 | Candied Fruit 
+章鱼 | Octopus 
+龙虾 | Lobster 
+螃蟹 | Crab 
+鱿鱼 | Squid 
+蛾螺 | Whelk 
+贻贝 | Mussel 
+海鲜 | Seafood 
+扇贝 | Scallop 
+蛤蚌 | Clam 
+海蛤 | Cockle 
+小龙虾 | Crayfish 
+牡蛎 | Oyster 
+虾 | Shrimp 
+鲭鱼 | Mackerel 
+三文鱼 | Salmon 
+鳟鱼 | Trout 
+狗鲨 | Dogfish 
+鲟鱼 | Sturgeon 
+鳀鱼 | Anchovy 
+沙丁鱼 | Sardine 
+鳕鱼 | Cod 
+比目鱼 | Flounder 
+黑线鳕 | Haddock 
+红笛鲷 | Red Snapper 
+金枪鱼 | Tuna 
+鳗鱼 | Eel 
+鲱鱼 | Herring 
+海鲈 | Sea Bass 
+调味品包 | Bouquet Garni 
+孜然 | Cumin 
+香草 | Vanilla 
+肉豆蔻 | Nutmeg 
+肉豆蔻衣 | Mace 
+姜黄 | Turmeric 
+肉桂 | Cinnamon 
+多香果 | Allspice 
+胡椒粒 | Peppercorn 
+胡芦巴 | Fenugreek 
+柠檬草 | Lemongrass 
+藏红花 | Saffron 
+小豆蔻 | Cardamom 
+咖喱粉 | Curry Powder 
+丁香 | Clove 
+辣椒粉 | Paprika 
+大蒜 | Garlic 
+大料 | Star Anise 
+姜 | Ginger 
+茴香 | Fennel 
+月桂 | Bay 
+欧芹 | Parsley 
+细香葱 | Chives 
+薄荷 | Mint 
+百里香 | Thyme 
+鼠尾草 | Sage 
+龙蒿 | Tarragon 
+马郁兰 | Marjoram 
+罗勒 | Basil 
+牛至 | Oregano 
+芫荽 | Coriander 
+莳萝叶 | Dill 
+迷迭香 | Rosemary 
+旱芹 | Celery 
+芝麻 | Sesame 
+盐 | Salt 
+糖 | Sugar 
+大黄 | Rhubarb 
+芥末 | Mustard 
+蛋黄酱 | Mayonnaise 
+番茄酱 | Ketchup 
+马槟榔 | Caper 
+盐水 | Brine 
+酱油 | Soy Sauce 
+橄榄油 | Olive Oil 
+鸡精 | Chicken Bouillon 
+茉莉花茶 | Jasmine Tea 
+玫瑰花茶 | Rose Tea 
+紫砂壶 | Zisha Teapot 
+红茶 | Black Tea 
+菊花茶 | Chrysanthemum Tea 
+绿茶 | Green Tea 
+乌龙茶 | Oolong Tea 
+茶包 | Tea Bag 
+茶罐 | Tea Caddy 
+茶叶 | Tea Leaves 
+滤茶器 | Tea Strainer 
+茶杯 | Teacup 
+茶壶 | Teapot 
+薄荷茶 | Mint Tea 
+大吉岭茶 | Darjeeling Tea 
+柿子椒 | Bell Pepper 
+西红柿 | Tomato 
+菠菜 | Spinach 
+大蒜 | Garlic 
+生菜 | Lettuce 
+玉米 | Corn 
+卷心菜 | Cabbage 
+黄瓜 | Cucumber 
+蘑菇 | Mushroom 
+洋葱 | Onion 
+土豆 | Potato 
+芦笋 | Asparagus 
+豆子 | Bean 
+西兰花 | Broccoli 
+胡萝卜 | Carrot 
+花椰菜 | Cauliflower 
+芹菜 | Celery 
+茄子 | Eggplant 
+姜 | Ginger 
+豌豆 | Pea 
+朝鲜蓟 | Artichoke 
+甜菜 | Beet 
+球芽甘蓝 | Brussels Sprout 
+苦菜 | Chicory 
+大葱 | Leek 
+南瓜 | Pumpkin 
+小萝卜 | Radish 
+红球甘蓝 | Red Cabbage 
+芜菁 | Turnip 
+西葫芦 | Zucchini 
+川菜 | Sichuan or Szechuan cuisine
+面食 | food made from wheat flour, such as noodles, dumplings, buns etc
+石斑鱼 | grouper
+刺身 | sashimi
+芋头 | taro
+蛋糕 | cake
+螃蟹 | crab
+河蟹 | river crab
+乳酪蛋糕 | cheesecake
+芝士蛋糕 | cheesecake
+瑞士卷 | Swiss roll
+起司蛋糕 | cheesecake
+抹茶 | green tea powder (Japanese: matcha)
+卤水 | brine/bittern/marinade
+三明治 | sandwich (loanword)/CL:個|个[ge4]
+蝴蝶酥 | crispy short-crust pastry/mille-feuilles
+泡芙 | cream puff (loanword)/profiterole
+马卡龙 | macaron, French pastry with a soft filling sandwiched between the meringue-based cookie shells (loanword)
+冰淇淋 | ice cream
+摩卡咖啡 | mocha coffee
+吉事果 | churro
+菠萝 | pineapple
+黑森林蛋糕 | Black forest gateau/schwarzwälder Kirschtorte
+卡布奇诺 | cappuccino (coffee)
+面包 | bread/CL:片[pian4],袋[dai4],塊|块[kuai4]
+布丁 | pudding (loanword)
+金针菇 | enoki mushroom
+大虾 | prawn
+豆花 | douhua | type of bean curd
+牛蛙 | bullfrog
+凉面 | cold noodles
+福寿螺 | giant Amazon snail | giant Amazon snail that has devastated rice paddies in China since its introduction in the 1980s
+爆米花 | puffed rice/popcorn
+鲶鱼 | catfish
+扇贝 | scallop | (genus Pecten)
+饺子 | dumpling/pot-sticker
+牛排 | steak
+羊排 | lamb chop
+鳕鱼 | cod
+饺子 | dumpling/pot-sticker
+早点 | light breakfast
+土豆 | potato
+酸奶 | yogurt
+鹅肝 | foie gras
+龙虾 | lobster
+带鱼 | ribbonfish | hairtail/beltfish/cutlassfish (family Trichiuridae)
+河豚 | blowfish | (Tetraodontidae)/puffer
+洗浴 | bath
+豆浆 | soy milk
+海鲜 | seafood
+香菇 | shiitake mushroom
+鸽子 | pigeon | pigeon/dove/various birds of the species Columbidae
+丸子 | balls/meatballs
+炸鸡 | fried chicken
+巧克力 | chocolate
+菌类 | fungus
+麻酱 | sesame paste
+走地鸡 | free-range chicken
+海参 | sea cucumber
+鲍鱼 | abalone
+慕斯 | mousse (loanword)
+乳酪 | cheese
+甜筒 | the cone of ice-cream cone
+棉花糖 | cotton candy
+咖啡 | coffee
+冰激凌 | ice cream
+香肠 | sausage
+威士忌 | whiskey (loanword)
+香草 | aromatic herb/vanilla
+小吃 | snack
+鲁菜 | Shandong cuisine
+东北 | Northeast China/Manchuria
+哈根达斯 | Häagen-Dazs
+家常菜 | home cooking
+米粉 | rice flour/rice-flour noodles
+家常 | the daily life of a family
+烧烤 | barbecue/to roast
+米饭 | (cooked) rice

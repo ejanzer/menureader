@@ -1,17 +1,73 @@
-import model
+import csv
+import sql.alchemy.exc.IntegrityError
+
 from base import Base, engine, db_session
+from dict_entry import Dict_Entry
+from dish import Dish
 
 def seed_cedict():
     """Seed the Chinese/English dictionary with data from CEDICT."""
-    pass
+    with open('seeds/cedict3.csv', 'rb') as f:
+    reader = csv.reader(f, delimiter=',', quotechar='"')
+    for row in reader:
+        if row[0] == '#':
+            continue
+        else:
+            for i in range(len(row)):
+                row[i] = row[i].decode('utf-8')
+
+            trad, simp, pinyin = row[0], row[1], row[2]
+            definition = ''.join(row[3:])
+            pinyin = pinyin.strip('"')
+            definition = definition.strip('"')
+
+            entry = Dict_Entry(simplified=simp, traditional=trad, pinyin=pinyin, definition=definition)
+            db_session.add(entry)
+    try: 
+        db_session.commit()
+    except sqlalchemy.exc.IntegrityError, e:
+        db_session.rollback()
 
 def seed_dishes():
     """Seed dishes table with common dish names from Dianping and others."""
-    pass
+    with open('seeds/dishes_seed.txt', 'rb') as f:
+        reader = csv.reader(f, delimiter='|')
+        for row in reader:
+            for i in range(len(row)):
+                row[i] = row[i].decode('utf-8')
+                row[i] = row[i].strip()
+
+            chin_name = row[0]
+            eng_name = row[1].lower()
+
+            dish = Dish(chin_name=chin_name, eng_name=eng_name)
+            db_session.add(dish)
+
+        try: 
+            db_session.commit()
+        except sqlalchemy.exc.IntegrityError, e:
+            db_session.rollback()
+
 
 def seed_food_words():
     """Seed food_words table with common food words."""
-    pass
+    with open('seeds/food_words_seed.txt', 'rb') as f:
+        reader = csv.reader(f, delimiter='|')
+        for row in reader:
+            for i in range(len(row)):
+                row[i] = row[i].decode('utf-8')
+                row[i] = row[i].strip()
+
+            simplified = row[0]
+            english = row[1].lower()
+
+            food_word = Food_Word(simplified=simplified, english=english)
+            db_session.add(dish)
+
+        try: 
+            db_session.commit()
+        except sqlalchemy.exc.IntegrityError, e:
+            db_session.rollback()
 
 def seed_users():
     """Seed users with test users."""
