@@ -1,32 +1,33 @@
-import csv
-import sql.alchemy.exc.IntegrityError
+import sqlalchemy
 
+import csv
 from base import Base, engine, db_session
 from dict_entry import Dict_Entry
 from dish import Dish
+from food_word import Food_Word
 
 def seed_cedict():
     """Seed the Chinese/English dictionary with data from CEDICT."""
     with open('seeds/cedict3.csv', 'rb') as f:
-    reader = csv.reader(f, delimiter=',', quotechar='"')
-    for row in reader:
-        if row[0] == '#':
-            continue
-        else:
-            for i in range(len(row)):
-                row[i] = row[i].decode('utf-8')
+        reader = csv.reader(f, delimiter=',', quotechar='"')
+        for row in reader:
+            if row[0] == '#':
+                continue
+            else:
+                for i in range(len(row)):
+                    row[i] = row[i].decode('utf-8')
 
-            trad, simp, pinyin = row[0], row[1], row[2]
-            definition = ''.join(row[3:])
-            pinyin = pinyin.strip('"')
-            definition = definition.strip('"')
+                trad, simp, pinyin = row[0], row[1], row[2]
+                definition = ''.join(row[3:])
+                pinyin = pinyin.strip('"')
+                definition = definition.strip('"')
 
-            entry = Dict_Entry(simplified=simp, traditional=trad, pinyin=pinyin, definition=definition)
-            db_session.add(entry)
-    try: 
-        db_session.commit()
-    except sqlalchemy.exc.IntegrityError, e:
-        db_session.rollback()
+                entry = Dict_Entry(simplified=simp, traditional=trad, pinyin=pinyin, definition=definition)
+                db_session.add(entry)
+        try: 
+            db_session.commit()
+        except sqlalchemy.exc.IntegrityError, e:
+            db_session.rollback()
 
 def seed_dishes():
     """Seed dishes table with common dish names from Dianping and others."""
@@ -62,7 +63,7 @@ def seed_food_words():
             english = row[1].lower()
 
             food_word = Food_Word(simplified=simplified, english=english)
-            db_session.add(dish)
+            db_session.add(food_word)
 
         try: 
             db_session.commit()
@@ -88,10 +89,12 @@ def seed_restaurants():
 if __name__ == "__main__":
     # Uncomment and run as main to seed entire database.
     # Or, run in interactive mode and call the function for the table you want to seed.
-    seed_cedict()
-    seed_dishes()
+    # seed_cedict()
+    # seed_dishes()
     seed_food_words()
-    seed_users()
-    seed_reviews()
-    seed_tags()
-    seed_restaurants()
+    # seed_users()
+    # seed_reviews()
+    # seed_tags()
+    # seed_restaurants()
+
+
