@@ -8,8 +8,8 @@ class Review(Base):
     __tablename__ = "reviews"
 
     id = Column(Integer, primary_key=True)
-    user_id = Column(Integer, ForeignKey('users.id'))
-    rest_dish_id = Column(Integer, ForeignKey('rest_dishes.id'))
+    user_id = Column(Integer, ForeignKey('users.id'), nullable=False)
+    rest_dish_id = Column(Integer, ForeignKey('rest_dishes.id'), nullable=False)
     dish_id = Column(Integer, ForeignKey('dishes.id'))
     text = Column(String(64), nullable=True)
     date = Column(Date, nullable=False)

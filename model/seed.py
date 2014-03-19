@@ -124,13 +124,14 @@ def add_review(user_id, dish_id, rest_id, tag_id, text):
 
     rest_dish = Rest_Dish(dish_id=dish_id, rest_id=rest_id)
     db_session.add(rest_dish)
+    db_session.commit()
 
     dish_tag = Dish_Tag(dish_id=dish_id, tag_id=tag_id, rest_dish_id=rest_dish.id)
     db_session.add(dish_tag)
+    db_session.commit()
 
     review = Review(user_id=user_id, rest_dish_id=rest_dish.id, dish_id=dish_id, text=text, date=now)
     db_session.add(review)
-
     db_session.commit()
 
 
@@ -157,7 +158,7 @@ if __name__ == "__main__":
     # seed_dishes()
     # seed_food_words()
     # seed_users()
-    # seed_reviews()
+    seed_reviews()
     # seed_tags()
     # seed_restaurants()
     pass

@@ -2,7 +2,9 @@ import datetime
 from sqlalchemy import Column, Integer, String, Date
 from sqlalchemy import ForeignKey
 from sqlalchemy.orm import relationship, backref
+
 from base import Base, db_session
+from date import format_date
 
 class Dish(Base):
     __tablename__ = "dishes"
@@ -16,6 +18,10 @@ class Dish(Base):
     @staticmethod
     def get_dish_by_id(id):
         dish = db_session.query(Dish).get(id)
+        return dish
+
+    @staticmethod
+    def jsonify(dish):
         data = {
             'dish': {
                 'id': dish.id,
@@ -24,7 +30,7 @@ class Dish(Base):
             }
         }
         if dish.reviews:
-            reviews = [{'username': review.user.username, 'date': datetime.datetime.strftime(review.date, '%D'), 'text': review.text} for review in dish.reviews]
+            reviews = [{'username': review.user.username, 'date': format_date(review.date), 'text': review.text} for review in dish.reviews]
             data['dish']['reviews'] = reviews
 
         if dish.dish_tags:
