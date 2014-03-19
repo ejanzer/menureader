@@ -4,6 +4,8 @@ import os
 from urllib import urlopen
 from werkzeug.utils import secure_filename
 
+from model.model import Dish, User
+
 UPLOAD_FOLDER = "./image_uploads"
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 
@@ -50,12 +52,15 @@ def upload_webcam():
 @app.route("/dish/<int:id>")
 def view_dish(id):
     # Will return dish object from database.
-    pass
+    data = model.model.Dish.get_dish_by_id(id)
+    return json.dumps(data)
 
 @app.route("/dish/new", methods=["POST"])
 def add_dish():
     # Takes post data and creates a new dish in the database.
+    user_id = session.get("user_id")
     pass
+
 
 @app.route("/restaurant/<int:id>")
 def view_restaurant(id):
