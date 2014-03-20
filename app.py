@@ -8,6 +8,7 @@ from werkzeug.utils import secure_filename
 
 from model.model import Dish, User
 from tesseract.pytesser import image_file_to_string
+from normalize import normalize_image
 
 UPLOAD_FOLDER = "./image_uploads"
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
@@ -72,9 +73,14 @@ def upload():
         with open(image_path, 'wb') as f:
             f.write(file)
 
+        # do some preprocessing on the image to optimize it for Tesseract
+        normalize_image(image_path)
+
+        # run the image through tesseract and extract text
         text = image_file_to_string(image_path, lang="chi_sim", graceful_errors=True)
-        print text
-        return "yay!"
+        
+        # TODO: return translation as well as text
+        return text
 
 
 # @app.route("/upload/file", methods=["POST"])
