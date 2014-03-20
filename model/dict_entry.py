@@ -12,3 +12,8 @@ class Dict_Entry(Base):
     traditional = Column(String(64), nullable=True)
     pinyin = Column(String(64), nullable=True)
     definition = Column(String(64), nullable=False)
+
+    @staticmethod
+    def find_match(word):
+        # TODO
+        return None

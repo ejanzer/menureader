@@ -11,3 +11,8 @@ class Food_Word(Base):
     simplified = Column(String(64), nullable=False)
     pinyin = Column(String(64), nullable=True)
     english = Column(String(64), nullable=False)
+
+    @staticmethod
+    def find_match(word):
+        # TODO
+        return None

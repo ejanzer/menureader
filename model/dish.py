@@ -38,3 +38,13 @@ class Dish(Base):
             data['dish']['tags'] = tags
 
         return data
+
+    @staticmethod
+    def find_match(word):
+        #TODO
+        return None
+
+    @staticmethod
+    def find_similar(word):
+        #TODO
+        return []
