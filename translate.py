@@ -35,43 +35,45 @@ def find_words(text):
 def check_words(combinations):
     for c in combinations:
         found_def = True
-        chars = []
+        translation = []
         for char in c:
             food_word = Food_Word.find_match(char)
-            #food_word = db_session.query(Food_Word).filter_by(simplified=char).first()
             if food_word:
-                chars.append(food_word)
+                translation.append(food_word.get_json())
             else:
-                entry = Entry.find_match(char)
-                #entry = session.query(Entry).filter_by(simplified=char).first()
+                entry = Dict_Entry.find_match(char)
                 if entry:
-                    chars.append(entry)
+                    translation.append(entry.get_json())
                 else:
                     found_def = False
                     break
             
         if found_def:
-            return chars
+            return translation
 
 def translate(text):
     """Attempt to translate text using food_words and then the CEDICT dictionary."""
     words = find_words(text)
+    results = check_words(words)
+    return results
 
 
-def search(text):
+def get_results_json(text):
+    results = {}
     if type(text) != unicode:
-        print "Oops, what went wrong here?"
-        return None
-    elif len(text) > 10:
+        text = text.decode('utf-8')
+    if len(text) > 10:
         print "Input text is too long."
         return None
     else:
         match = Dish.find_match(text)
 
         if match:
-            return match
+            results['dish'] = match.get_json()
         else:
-            translations = translate(text)
-            similar = Dish.find_similar(text)
+            translation = translate(text)
+            results['translation'] = translation
+            #similar = Dish.find_similar(text)
+            #results['similar'] = similar
 
-
+    return results

@@ -15,36 +15,37 @@ class Dish(Base):
     pinyin = Column(String(64), nullable=True)
     desc = Column(String(64), nullable=True)
 
+    def get_json(self):
+        data = {
+            'dish': {
+                'id': self.id,
+                'chin_name': self.chin_name,
+                'eng_name': self.eng_name,
+            }
+        }
+        if self.reviews:
+            reviews = [{'username': review.user.username, 'date': format_date(review.date), 'text': review.text} for review in self.reviews]
+            data['dish']['reviews'] = reviews
+
+        if self.dish_tags:
+            tags = [dish_tag.tag.name for dish_tag in self.dish_tags]
+            data['dish']['tags'] = tags
+
+        return data
+
     @staticmethod
     def get_dish_by_id(id):
         dish = db_session.query(Dish).get(id)
         return dish
 
     @staticmethod
-    def jsonify(dish):
-        data = {
-            'dish': {
-                'id': dish.id,
-                'chin_name': dish.chin_name,
-                'eng_name': dish.eng_name,
-            }
-        }
-        if dish.reviews:
-            reviews = [{'username': review.user.username, 'date': format_date(review.date), 'text': review.text} for review in dish.reviews]
-            data['dish']['reviews'] = reviews
-
-        if dish.dish_tags:
-            tags = [dish_tag.tag.name for dish_tag in dish.dish_tags]
-            data['dish']['tags'] = tags
-
-        return data
-
-    @staticmethod
     def find_match(word):
-        #TODO
-        return None
+        return db_session.query(Dish).filter_by(chin_name=word).first()
 
     @staticmethod
     def find_similar(word):
-        #TODO
-        return []
+        results = []
+        # TODO
+        return results
+
+

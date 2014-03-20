@@ -9,6 +9,7 @@ from werkzeug.utils import secure_filename
 from model.model import Dish, User
 from tesseract.pytesser import image_file_to_string
 from normalize import normalize_image
+from translate import get_results_json
 
 UPLOAD_FOLDER = "./image_uploads"
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
@@ -102,8 +103,7 @@ def upload():
 def view_dish(id):
     # Will return dish object from database.
     dish = Dish.get_dish_by_id(id)
-
-
+    data = dish.get_json()
     return json.dumps(data)
 
 @app.route("/dish/new", methods=["POST"])
@@ -122,18 +122,14 @@ def view_restaurant(id):
 def view_user(id):
     # Returns user data (not the password)
     user = User.get_user_by_id(id)
-    data = User.jsonify(user)
+    data = User.get_json(user)
     return json.dumps(data)
 
 @app.route("/search/<string:text>")
 def search(text):
     # Returns search data for a particular query.
-    # Step 1: Check the dishes table for an exact match.
-    # Step 2: Check dishes for a partial match.
-    # Step 3: Check food_words for an exact/partial match.
-    # Step 4: Look up remaining characters in CEDICT.
-    # If no exact matches, return best translation (*) and top 5 results from dishes.
-    pass
+    results = get_results_json(text)
+    return json.dumps(results)
 
 @app.route("/review/new", methods=["POST"])
 def add_review():
