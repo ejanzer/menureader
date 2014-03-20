@@ -1,3 +1,4 @@
+import base64
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory, flash, session
 import json
 import datetime
@@ -6,6 +7,7 @@ from urllib import urlopen
 from werkzeug.utils import secure_filename
 
 from model.model import Dish, User
+from tesseract.pytesser import image_file_to_string
 
 UPLOAD_FOLDER = "./image_uploads"
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
@@ -56,20 +58,39 @@ def signup():
 
     return response
 
-@app.route("/upload/file", methods=["POST"])
-def upload_file():
-    # Accept a File object in form data and send to tesseract for processing.
-    # Return the text, dish object, translation and/or relevant dishes
-    text = ""
-    return text
+@app.route("/upload", methods=["POST"])
+def upload():
+    if request.data:
+        file = base64.b64decode(request.data)
+        now = datetime.datetime.utcnow()
+        filename = now.strftime('%Y%m%d%M%S') + '.png'
+        print filename
 
-@app.route("/upload/webcam", methods=["POST"])
-def upload_webcam():
-    # Accept a base64-encoded bytestream and send to tesseract for processing.
-    # Return the text, dish object, translation and/or relevant classes.
-    # TODO: Do security checks on image.
-    text = ""
-    return text
+        image_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+        print image_path
+
+        with open(image_path, 'wb') as f:
+            f.write(file)
+
+        text = image_file_to_string(image_path, lang="chi_sim", graceful_errors=True)
+        print text
+        return "yay!"
+
+
+# @app.route("/upload/file", methods=["POST"])
+# def upload_file():
+#     # Accept a File object in form data and send to tesseract for processing.
+#     # Return the text, dish object, translation and/or relevant dishes
+#     text = ""
+#     return text
+
+# @app.route("/upload/webcam", methods=["POST"])
+# def upload_webcam():
+#     # Accept a base64-encoded bytestream and send to tesseract for processing.
+#     # Return the text, dish object, translation and/or relevant classes.
+#     # TODO: Do security checks on image.
+#     text = ""
+#     return text
 
 @app.route("/dish/<int:id>")
 def view_dish(id):
