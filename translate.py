@@ -5,6 +5,7 @@ from model.base import db_session
 
 def find_words(text):
     """Find all combinations of sequential characters within a string of characters."""
+    print "finding combinations"
     length = len(text)
     n = length - 1
     num_combos = 2 ** (length - 1)

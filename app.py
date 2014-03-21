@@ -75,7 +75,7 @@ def upload():
             f.write(file)
 
         # do some preprocessing on the image to optimize it for Tesseract
-        normalize_image(image_path)
+        # normalize_image(image_path)
 
         # run the image through tesseract and extract text
         text = image_file_to_string(image_path, lang="chi_sim", graceful_errors=True)

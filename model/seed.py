@@ -67,6 +67,7 @@ def seed_food_words():
                 row[i] = row[i].decode('utf-8')
                 row[i] = row[i].strip()
 
+            print row
             simplified = row[0]
             english = row[1].lower()
 
@@ -158,7 +159,7 @@ if __name__ == "__main__":
     # seed_dishes()
     # seed_food_words()
     # seed_users()
-    seed_reviews()
+    #seed_reviews()
     # seed_tags()
     # seed_restaurants()
     pass
