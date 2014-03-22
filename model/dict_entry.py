@@ -17,12 +17,10 @@ class Dict_Entry(Base):
         d = {
             'char': self.simplified,
             'pinyin': self.pinyin,
-            'english': self.definition     
+            'english': self.definition
         }
         return d
 
     @staticmethod
-    def find_match(word):
-        # TODO: The first match isn't usually the best.
-        # Find another way to find the best match?
-        return db_session.query(Dict_Entry).filter_by(simplified=word).first()
+    def find_matches(word):
+        return db_session.query(Dict_Entry).filter_by(simplified=word).all()

@@ -42,9 +42,10 @@ def check_words(combinations):
             if food_word:
                 translation.append(food_word.get_json())
             else:
-                entry = Dict_Entry.find_match(char)
-                if entry:
-                    translation.append(entry.get_json())
+                entries = Dict_Entry.find_matches(char)
+                if entries != []:
+                    for entry in entries:
+                        translation.append(entry.get_json())
                 else:
                     found_def = False
                     break
@@ -60,6 +61,7 @@ def translate(text):
 
 
 def get_results_json(text):
+    print "Searching for text", text
     results = {}
     if type(text) != unicode:
         text = text.decode('utf-8')
@@ -67,14 +69,21 @@ def get_results_json(text):
         print "Input text is too long."
         return None
     else:
+        # Find a matching dish, if it exists.
         match = Dish.find_match(text)
-
+        print "match is", match
         if match:
-            results['dish'] = match.get_json()
+            results = match.get_json()
         else:
             translation = translate(text)
             results['translation'] = translation
-            #similar = Dish.find_similar(text)
-            #results['similar'] = similar
+
+            # Find similar dishes and add to results.
+            similar_dishes = Dish.find_similar(text)
+            similar_json = []            
+            for similar_dish in similar_dishes:
+                similar_json.append(similar_dish.get_json())
+                
+            results['similar'] = similar_json
 
     return results

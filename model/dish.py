@@ -28,7 +28,15 @@ class Dish(Base):
             data['dish']['reviews'] = reviews
 
         if self.dish_tags:
-            tags = [dish_tag.tag.name for dish_tag in self.dish_tags]
+            tags_dict = {}
+            for dish_tag in self.dish_tags:
+                name = dish_tag.tag.name
+                if tags_dict.get(name):
+                    tags_dict[name] += 1
+                else:
+                    tags_dict[name] = 1
+
+            tags = {name: count for name, count in tags_dict.iteritems()}
             data['dish']['tags'] = tags
 
         return data
@@ -45,7 +53,19 @@ class Dish(Base):
     @staticmethod
     def find_similar(word):
         results = []
-        # TODO
+        word_list = []
+        for char in word:
+            word_list.append(char)
+
+        for i in range(len(word)):
+            temp = word_list[i]
+            word_list[i] = '%'
+            new_word = ''.join(word_list)
+
+            similar = db_session.query(Dish).filter(Dish.chin_name.like(new_word)).all()
+            results.extend(similar)
+            word_list[i] = temp
+
         return results
 
 
