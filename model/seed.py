@@ -113,7 +113,7 @@ def seed_reviews():
     add_review(1, 107, 2, 1, "too spicy!")
 
     ##### Add a review for Kung Pao Chicken at Cafe Macs from Nick. #####
-    add_review(2, 6, 5, 2, "Very peanut\nMuch tasty\nWow")
+    add_review(2, 13, 5, 2, "Very peanut\nMuch tasty\nWow")
 
     ##### Add a review for Chongqing Chicken at Chef Zhao's from Emily. #####
     add_review(1, 218, 1, 1, "nom so hard")
@@ -159,7 +159,7 @@ if __name__ == "__main__":
     # seed_dishes()
     # seed_food_words()
     # seed_users()
-    #seed_reviews()
+    # seed_reviews()
     # seed_tags()
     # seed_restaurants()
     pass
