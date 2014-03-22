@@ -11,7 +11,7 @@ def resize_image(im):
 def get_threshold(im):
     """Get the threshold for determining whether a pixel turns to white or black."""
     # get_data returns an array of all pixel values in image.
-    pixel_values = im.get_data()
+    pixel_values = im.getdata()
     average = sum(pixel_values)/len(pixel_values)
 
     # using a treshold offset to deal with antialiasing... remove if it doesn't work
@@ -24,13 +24,15 @@ def remove_noise(im):
 
     for column in range(im.size[0]):
         for row in range(im.size[1]):
-            if im.get_pixel((column, row)) < threshold:
+            if im.getpixel((column, row)) < threshold:
                 # If pixel is darker than threshold, replace with black.
                 value = 0
             else:
                 # Otherwise, replace with white.
                 value = 255
-            im.put_pixel((column, row), value)
+            im.putpixel((column, row), value)
+            
+    return im
 
 
 def sample_corners(im):

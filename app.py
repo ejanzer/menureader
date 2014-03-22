@@ -75,29 +75,13 @@ def upload():
             f.write(file)
 
         # do some preprocessing on the image to optimize it for Tesseract
-        # normalize_image(image_path)
+        normalize_image(image_path)
 
         # run the image through tesseract and extract text
         text = image_file_to_string(image_path, lang="chi_sim", graceful_errors=True)
-        
-        # TODO: return translation as well as text
-        return text
-
-
-# @app.route("/upload/file", methods=["POST"])
-# def upload_file():
-#     # Accept a File object in form data and send to tesseract for processing.
-#     # Return the text, dish object, translation and/or relevant dishes
-#     text = ""
-#     return text
-
-# @app.route("/upload/webcam", methods=["POST"])
-# def upload_webcam():
-#     # Accept a base64-encoded bytestream and send to tesseract for processing.
-#     # Return the text, dish object, translation and/or relevant classes.
-#     # TODO: Do security checks on image.
-#     text = ""
-#     return text
+        text = text.strip()
+        print text
+        return redirect(url_for("search", text=text))
 
 @app.route("/dish/<int:id>")
 def view_dish(id):
