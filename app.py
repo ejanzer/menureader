@@ -9,7 +9,7 @@ from werkzeug.utils import secure_filename
 from model.model import Dish, User
 from tesseract.pytesser import image_file_to_string
 from normalize import normalize_image
-from translate import get_results_json
+from translate import search_dish_name
 
 UPLOAD_FOLDER = "./image_uploads"
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
@@ -62,8 +62,11 @@ def signup():
 
 @app.route("/upload", methods=["POST"])
 def upload():
+    print "request.data", len(request.data)
+    print "request.files", len(request.files)
+    print "request.form", len(request.form)
     if request.data:
-        file = base64.b64decode(request.data)
+        file = request.data
         now = datetime.datetime.utcnow()
         filename = now.strftime('%Y%m%d%M%S') + '.png'
         print filename
@@ -75,7 +78,7 @@ def upload():
             f.write(file)
 
         # do some preprocessing on the image to optimize it for Tesseract
-        normalize_image(image_path)
+        # normalize_image(image_path)
 
         # run the image through tesseract and extract text
         text = image_file_to_string(image_path, lang="chi_sim", graceful_errors=True)
@@ -112,7 +115,7 @@ def view_user(id):
 @app.route("/search/<string:text>")
 def search(text):
     # Returns search data for a particular query.
-    results = get_results_json(text)
+    results = search_dish_name(text)
     return json.dumps(results)
 
 @app.route("/review/new", methods=["POST"])

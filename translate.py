@@ -60,7 +60,7 @@ def translate(text):
     return results
 
 
-def get_results_json(text):
+def search_dish_name(text):
     print "Searching for text", text
     results = {}
     if type(text) != unicode:
@@ -83,7 +83,7 @@ def get_results_json(text):
             similar_json = []            
             for similar_dish in similar_dishes:
                 similar_json.append(similar_dish.get_json())
-                
+
             results['similar'] = similar_json
 
     return results
