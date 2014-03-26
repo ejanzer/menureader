@@ -1,4 +1,3 @@
-import base64
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory, flash, session
 import json
 import datetime
