@@ -10,11 +10,11 @@ w = codecs.open('model/seeds/dianping_translations.txt', 'a', encoding='utf-8')
 for dish in dishes:
     dish = dish.strip('\n')
     dish = dish.decode('utf-8')
-    results = translate.get_results_json(dish)
+    results = translate.search_dish_name(dish)
     print results['translation']
 
     w.write(dish)
-    w.write(" : ")
+    w.write(" | ")
 
     definition = ""
     for word in results['translation']:

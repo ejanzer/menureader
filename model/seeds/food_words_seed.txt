@@ -1,63 +1,57 @@
 菠菜 | spinach 
 蕃茄 | tomato 
 红萝卜 | carrot 
-胡萝卜 | (bot.) the carrot 
-姜 | (surname) / ginger 
-卷心菜 | the cabbage 
-辣椒 | hot pepper / chili 
+胡萝卜 | carrot 
+姜 | ginger 
+卷心菜 | cabbage 
+辣椒 | chili pepper
 马铃薯 | potato 
-茄子 | eggplant; aubergine; Guinea squash 
-青豆 | green beans in gen 
-秋葵 | (bot.) the hibiscus, Abelmoschous esculentus 
+茄子 | eggplant
+青豆 | green beans
+秋葵 | hibiscus
 生菜 | lettuce 
-豌豆 | pea (Pisum sativum) 
+豌豆 | pea
 芜菁 | turnip 
 香菜 | parsley 
 洋芋 | potato 
-葱 | scallion / green onion 
-甘蓝 | (bot.) Brassica oleracea, and its derivatives the cauliflower, Brussels sprouts, and kale 
+葱 | scallion
+甘蓝 | cauliflower
 红薯 | sweet potato 
 黄瓜 | cucumber 
-芥菜 | the mustard plant, leaf mustard 
-苦瓜 | (bot.) bitter gourd, Momordica charanta 
+芥菜 | mustard leaf
+苦瓜 | bitter gourd
 芦笋 | asparagus 
 南瓜 | pumpkin 
 芹菜 | celery 
 青椒 | green pepper 
-山药 | the yam 
+山药 | yam 
 甜菜 | beet 
 莴苣 | lettuce 
 西红柿 | tomato 
 洋葱 | onion 
-玉米 | corn / maize 
-大肠 | the large intestine 
+玉米 | corn 
+大肠 | large intestine 
 肺 | lung 
-横膈膜 | (physiol.) the diaphragm 
 静脉 | vein 
 膀胱 | urine bladder 
-气管 | (physiol.) the windpipe, trachea; the bronchial tubes 
+气管 | trachea
 肾脏 | kidney 
 腺 | gland 
 心脏 | heart 
 喉咙 | throat 
 脑 | brain 
 舌 | tongue 
-食管 | (physiol.) the oesophagus 
-咽喉 | the throat; (fig.) vital defense area, strategic point 
+食管 | esophagus
+咽喉 | throat 
 动脉 | artery 
 肝脏 | liver 
 甲状腺 | thyroid gland 
-阑尾 | appendix (in human body) 
-脾脏 | the pancreas 
+阑尾 | appendix
+脾脏 | pancreas 
 神经 | nerve 
 胃 | stomach 
-小肠 | the intestines 
-喉结 | Adam's' apple 
-喉头 | throat / larynx 
-上颚 | roof of mouth 
-声带 | vocal cord(s) 
-咽 | narrow pass / throat 
-淋巴系统 | lymphatic system 
+小肠 | intestine 
+喉头 | throat
 菠萝 | pineapple 
 甘蔗 | cane 
 金橘 | kumquat 
@@ -67,116 +61,103 @@
 葡萄 | grape 
 柿子 | persimmon 
 西瓜 | watermelon 
-香瓜 | muskmelon; also different varieties of sweet melon 
+香瓜 | muskmelon
 椰子 | coconut 
-柚子 | pomelo / shaddock 
+柚子 | pomelo
 草莓 | strawberry 
-哈密瓜 | Hami melon (a variety of muskmelon) 
+哈密瓜 | Hami melon
 梨 | pear 
 荔枝 | litchi fruit 
-猕猴桃 | Chinese gooseberry / Kiwi fruit 
+猕猴桃 | Chinese gooseberry
 苹果 | apple 
-石榴 | the pomegranate 
+石榴 | pomegranate 
 桃子 | peach 
 香蕉 | banana 
 杏 | apricot 
 樱桃 | cherry 
 枣 | jujube 
-胸肌 | None 
 骨 | bone 
-脊柱 | the spinal column 
 腱 | gristle 
 肋骨 | rib 
 软骨 | cartilage 
-胸骨 | sternum / breastbone 
+胸骨 | breastbone
 胸椎 | thoracic vertebrae 
-髌骨 | kneecap / patella 
+髌骨 | kneecap
 关节 | joint 
-肩胛骨 | scapula / shoulder blade 
+肩胛骨 | scapula 
 颈椎 | cervical vertebra 
 韧带 | ligament 
-锁骨 | collarbone / clavicle 
-胸廓 | (physiol.) the thorax 
+锁骨 | collarbone 
 背 | carry on one's back 
 肚 | tripe 
 胳膊 | arm 
-脚 | a kick / foot / role 
+脚 | foot
 颈 | neck 
-髋 | pelvis / pelvic 
-女性 | the female sex 
-乳房 | the breasts 
-手臂 | arm 
+髋 | pelvis
 头 | head 
-臀 | butt / buttocks 
+臀 | butt
 膝盖 | knee 
-胸 | chest / bosom / heart / mind / thorax 
-肘 | elbow / pork shoulder 
+胸 | chest
+肘 | pork shoulder 
 大腿 | thigh 
-腹 | abdomen / stomach / belly 
+腹 | belly
 肩 | shoulder 
 脚踝 | ankle 
-胯 | thigh / leg 
-男性 | male 
-乳头 | nipple 
-手 | hand / convenient 
-手腕 | skill / finesse 
+胯 | thigh
+手 | hand
 腿 | leg 
 膝 | knee 
-小腿 | (physiol.) the calf 
+小腿 | calf
 腰 | waist 
-鼻孔 | nostril 
-唇 | lip; lips 
+唇 | lips
 耳垂 | lower ear lobe 
 酒窝 | dimple 
 毛孔 | pore 
 皮肤 | skin 
-雀斑 | freckle 
 下巴 | chin 
 眼睛 | eye 
-痣 | birthmark / mole 
 嘴 | mouth 
 鼻子 | nose 
 耳朵 | ear 
 睫毛 | lash 
 脸颊 | cheek 
-眉毛 | eyebrow 
 前额 | forehead 
-头发 | hair (on the head) 
-牙齿 | dental / tooth 
+头发 | hair
+牙齿 | tooth 
 眼皮 | eyelid 
 皱纹 | wrinkle 
 嘴巴 | mouth 
-粥 | Porridge 
-蛋炒饭 | Fried Rice With Egg 
-水饺 | Dumplings 
-皮蛋 | 100-year Egg 
-油条 | Fried Bread Stick 
-豆浆 | Soy Milk 
-烧饼 | Clay Oven Rolls 
-馒头 | Steamed Buns, Steamed Bread 
-麻辣面 | Spicy Hot Noodles 
-蛋花汤 | Egg And Vegetable Soup 
-油豆腐 | Oily Bean Curd 
-虾球 | Shrimp Balls 
-春卷 | Spring Rolls 
-肉丸 | Meatball 
-火锅 | Hot Pot 
-鱼丸汤 | Fish Ball Soup 
-臭豆腐 | Stinky Tofu 
-豌豆 | Green Pea 
-荷兰豆 | Snow Pea 
-兵豆 | Lentil 
-扁豆 | Dolichos Bean 
-鹰嘴豆 | Chick Pea 
-眉豆 | Black-Eyed Pea 
-鹊豆 | Lablab Bean 
-四季豆 | Green Bean 
-豇豆 | Yardlong Bean 
-黄荚种菜豆 | Wax Bean 
-红豆 | Azuki Bean 
-红花菜豆 | Scarlet Runner Bean 
+粥 | porridge 
+蛋炒饭 | fried rice with egg
+水饺 | dumplings 
+皮蛋 | 100-year egg 
+油条 | fried bread stick
+豆浆 | soy milk
+烧饼 | clay oven rolls
+馒头 | steamed buns
+麻辣面 | hot and numbing noodles
+蛋花汤 | egg and vegetable soup
+油豆腐 | oily bean curd
+虾球 | shrimp balls
+春卷 | spring rolls 
+肉丸 | meatballs 
+火锅 | hot pot 
+鱼丸汤 | fish ball soup 
+臭豆腐 | stinky tofu
+豌豆 | greeen pea
+荷兰豆 | snow pea 
+兵豆 | lentil
+扁豆 | dolichos bean
+鹰嘴豆 | chickpea
+眉豆 | black-eyed pea 
+鹊豆 | Lablab bean 
+四季豆 | green bean 
+豇豆 | Yardlong bean 
+黄荚种菜豆 | wax bean 
+红豆 | Azuki bean 
+红花菜豆 | scarlet runner bean 
 绿豆 | Mung Bean 
-利马豆 | Lima Bean 
+利马豆 | lima bean 
 斑豆 | Pinto Bean 
 红芸豆 | Red Kidney Bean 
 黑豆 | Black Bean 
@@ -192,7 +173,7 @@
 咖啡 | Coffee 
 浓咖啡 | Espresso 
 冰咖啡 | Iced Coffee 
-拿铁咖啡 | Caffelatte 
+拿铁咖啡 | Caffe latte 
 卡布奇诺 | Cappuccino 
 葡萄酒 | Wine 
 红葡萄酒 | Red Wine 
@@ -452,7 +433,7 @@ DQ冰淇淋 | Dairy Queen
 红球甘蓝 | Red Cabbage 
 芜菁 | Turnip 
 西葫芦 | Zucchini 
-川菜 | Sichuan or Szechuan cuisine
+川菜 | Sichuan cuisine
 面食 | food made from wheat flour, such as noodles, dumplings, buns etc
 石斑鱼 | grouper
 刺身 | sashimi
@@ -561,3 +542,213 @@ DQ冰淇淋 | Dairy Queen
 老北京 | old Beijing
 排骨 | spare rib
 皮 | skin
+四川 | Sichuan
+北京 | Beijing
+湖南 | Hunan
+湖北 | Hubei
+河北 | Hebei
+山东 | Shandong
+上海 | Shanghai
+西藏 | Tibet
+藏 | Tibet
+江苏 | Jiangsu
+浙江 | Zhejiang
+云南 | Yunnan
+重庆 | Chongqing
+肥牛 | hot pot beef
+涼菜 | cold dishes
+熱菜 | hot dishes
+焦饼 | scorched cake
+青笋 | bamboo shoots
+水煮 | poached with hot chili oil
+拉面 | pulled noodles/ramen
+猪蹄 | pig hoofs
+牛肉 | beef
+丸子 | meatballs
+鸡排 | chicken breast
+汤包 | steamed dumpling
+小笼汤包 | steamed soup dumpling
+小笼包 | steamed dumpling
+三文鱼 | salmon
+甲鱼 | turtle/terrapin
+鱼头 | fish head
+多宝鱼 | turbot | European imported turbot/same as 大菱鮃|大菱鲆
+鲤鱼 | carp
+盖饭 | rice with meat and vegetables
+奶茶 | milk tea
+肉饼 | meat patty
+豆腐脑 | jellied tofu/soft bean curd
+牛头 | cow head
+烧麦 | shumai (shao mai) steamed dumpling
+腰子 | kidney
+饼干 | cookie
+肉松 | shredded dried pork
+鱼丸 | fish ball
+蛤蜊 | clam
+馒头 | steamed roll/steamed bun
+玉米饼 | corn cake/Mexican tortilla
+大马哈鱼 | chum salmon
+地三鲜 | dish consisting of stir-fried potato, eggplant and green pepper
+血肠 | blood sausage/blutwurst/black pudding
+煎饺 | fried dumpling
+莜面 | oat noodles or flour
+油泼扯面 | broad, belt-shaped noodles | popular in Shaanxi, also known as biángbiáng miàn
+拌面 | noodles served with soy sauce/sesame butter
+小龙虾 | crayfish/langoustine
+铁板牛柳 | fillet beef teppanyaki (fast grilled on hot iron plate)
+面条 | noodles
+炒面 | fried noodles
+汤面 | noodle soup
+酸菜 | fermented cabbage
+豆腐 | tofu
+鱼翅 | shark fin
+酱菜 | pickled vegetables
+炖 | double steamed
+红烧 | braised
+炒 | stir-fried
+爆 | stir-fried
+包子 | steamed dumpling
+点心 | dim sum
+锅贴 | pot sticker
+饺子 | dumpling
+馒头 | steamed bun
+馄钝 | wonton
+云吞 | wonton
+小笼包 | soup dumpling
+粽子 | glutinous rice wrapped in bamboo leaves
+长寿包 | longevity buns
+葱油饼 | scallion pancakes
+月饼 | mooncake
+沙琪玛 | sachima
+烧饼 | pancake
+油条 | deep-fried dough stick
+粥 | rice porridge
+火锅 | hot pot
+糖水 | sweet soup
+螃蟹 | crab
+韭菜 | Chinese chives
+白菜 | bok choy
+菜花 | cauliflower
+生菜 | lettuce
+芹菜 | celery
+菠菜 | spinach
+東北菜 | Northeastern Chinese food
+四川菜 | Sichuan food
+湘菜 | Hunan food
+涼菜 | cold dishes
+熱菜 | hot dishes
+面条 | noodles
+炒面 | fried noodles
+汤面 | noodle soup
+炸酱面 | noodles with sauce
+米饭 | rice
+炒饭 | fried rice
+麻婆豆腐 | mapo tofu
+豆奶 | soy milk
+臭豆腐 | stinky tofu
+酸菜 | fermented cabbage
+豆腐 | tofu
+韭菜 | Chinese chives
+白菜 | bok choy
+菜花 | cauliflower
+生菜 | lettuce
+芹菜 | celery
+菠菜 | spinach
+蛋挞 | custard tart
+毛肚 | tripe
+排骨 | pork chop/pork cutlet/spare ribs
+豆皮 | tofu skin | dried beancurd
+菲力牛排 | fillet steak
+调料 | seasoning
+芝麻酱 | sesame paste
+麻将 | mahjong
+鸡汤 | chicken stock
+套餐 | set meal | product or service package (e.g. for a cell phone subscription)
+寿司 | sushi
+春卷 | egg roll/spring roll
+玉米片 | cornflakes
+咖喱 | curry
+甜品 | dessert
+叉烧 | barbecued pork
+奶黄包 | custard bun
+芹菜 | celery
+卤蛋 | soy egg
+茶叶蛋 | tea egg
+酱菜 | pickled vegetables
+炖 | double steamed
+红烧 | braised
+炒 | stir-fried
+爆 | stir-fried
+包子 | steamed dumpling
+点心 | dim sum
+锅贴 | pot sticker
+饺子 | dumpling
+馒头 | steamed bun
+馄钝 | wonton
+云吞 | wonton
+小笼包 | soup dumpling
+粽子 | glutinous rice wrapped in bamboo leaves
+长寿包 | longevity buns
+葱油饼 | scallion pancakes
+月饼 | mooncake
+沙琪玛 | sachima
+烧饼 | pancake
+油条 | deep-fried dough stick
+粥 | rice porridge
+螃蟹 | crab
+卤水墨鱼 | orange cuttlefish
+海参 | sea cucumber
+糕点 | pastries
+米粉肉 | rice flour meat
+虹鳟 | rainbow trout | (Oncorhynchus mykiss)
+鲟鱼 | sturgeon
+煎饼 | pancake
+馅饼 | meat pie | meat pie/pie/pasty
+麻辣烫 | hot and spicy soup | (often sold in street stalls)
+烤面包 | toast
+羊肉 | mutton/goat meat
+生煎包 | pan-fried dumpling
+生煎 | shengjian | a pan-fried bun filled with meat and juices, a Shanghai specialty
+豆汁 | douzhi | fermented drink made from ground mung beans/soy milk
+热干面 | hot dry noodles
+炸鸡 | fried chicken
+炸糕 | fried glutinous rice dough cake
+烤鸡 | roast chicken
+蛋包饭 | rice omelet
+包子 | steamed stuffed bun
+水饺 | boiled dumpling
+培根 | bacon
+臭豆腐 | stinky tofu | strong-smelling preserved beancurd
+薯条 | french fries | french fried potatoes/chips
+锅贴 | fried dumpling/pot sticker
+蚵仔煎 | oyster omelette
+蒸饺 | steamed dumpling
+虾球 | Shrimp Balls 
+春卷 | Spring Rolls 
+肉丸 | Meatball 
+鱼丸汤 | Fish Ball Soup 
+臭豆腐 | Stinky Tofu 
+水餃 | dumplings 
+饅頭 | sticky buns 
+包子 | steamed stuffed bun 
+炒麵 | fried noodles 
+陽春麵 | plain noodles 
+炒米粉 | fried rice noodles 
+白飯 | steamed white rice 
+壽司 | sushi 
+素什錦 | vegetarian platter 
+蘿蔔糕 | white radish patty 
+牛肉飯 | beef and rice 
+蛋餅 | egg omelet 
+金牌 | gold medal
+手抓 | hand-pulled
+丝 | strips
+排骨 | pork chop
+猪排 | pork ribs
+猪扒 | pork chop
+扒鸡 | braised chicken
+蒸 | steamed
+鸭 | duck
+面 | noodles
+酸 | sour
+宽粉 | wide noodles
