@@ -3,6 +3,8 @@ from model.dict_entry import Dict_Entry
 from model.food_word import Food_Word 
 from model.base import db_session
 
+CHAINS = {}
+
 def find_words(text):
     """Find all combinations of sequential characters within a string of characters."""
     print "finding combinations"
@@ -34,9 +36,12 @@ def find_words(text):
     return total_combos
 
 def check_words(combinations):
+    # Go through all the combinations of words and find their definitions using
+    # food_words and the dictionary.
+    translations = []
     for c in combinations:
-        found_def = True
         translation = []
+        found_def = True
         for char in c:
             food_word = Food_Word.find_match(char)
             if food_word:
@@ -46,10 +51,17 @@ def check_words(combinations):
                 if entries != []:
                     for entry in entries:
                         translation.append(entry.get_json())
+                elif len(char) == 1:
+                    # If the character isn't in the dictionary (usually punctuation)
+                    d = {
+                        "char": char,
+                        "pinyin": "",
+                        "english": "" 
+                    }
+                    translation.append(d)
                 else:
                     found_def = False
                     break
-            
         if found_def:
             return translation
 
@@ -58,6 +70,42 @@ def translate(text):
     words = find_words(text)
     results = check_words(words)
     return results
+
+def find_substitutes(text):
+    # Try to guess what incorrect characters might be
+
+    if CHAINS == {}:
+        generate_food_chains()
+
+    candidates = []
+    subs = []
+    for i in range(len(text)):
+        char = text[i]
+        if CHAINS.get(char):
+            print "found char %s" % char
+            candidates = []
+            candidates = CHAINS[char]
+        else:
+            print "didn't find char %s" % char
+            if candidates != []:
+                # choose the most popular option from candidates
+                counts = {}
+                for candidate in candidates:
+                    if counts.get(candidate):
+                        counts[candidate] += 1
+                    else:
+                        counts[candidate] = 1
+                max_count = 0
+                chosen = None
+                for candidate, count in counts.iteritems():
+                    if count > max_count:
+                        max_count = count
+                        chosen = candidate
+                if chosen:
+                    subs.append((chosen, i))
+
+                candidates = []
+    return subs
 
 
 def search_dish_name(text):
@@ -79,11 +127,33 @@ def search_dish_name(text):
             results['translation'] = translation
 
             # Find similar dishes and add to results.
-            similar_dishes = Dish.find_similar(text)
-            similar_json = []            
-            for similar_dish in similar_dishes:
-                similar_json.append(similar_dish.get_json())
+            # similar_dishes = Dish.find_similar(text)
+            # similar_json = []            
+            # for similar_dish in similar_dishes:
+            #     similar_json.append(similar_dish.get_json())
 
-            results['similar'] = similar_json
+            # results['similar'] = similar_json
 
     return results
+
+def generate_food_chains():
+    words = []
+    food_words = Food_Word.get_all_words()
+    dishes = Dish.get_all_dishes()
+    words.extend(food_words)
+    words.extend(dishes)
+
+    # Generate Markov chains. 
+    # Since dish names are short, I'm using an n-gram size of 1.
+    for i in range(len(words)):
+        word = words[i]
+        for j in range(len(word) - 1):
+            char = word[j]
+            next = word[j + 1]
+            if CHAINS.get(char):
+                CHAINS[char].append(next)
+            else:
+                CHAINS[char] = [next]
+
+
+ 

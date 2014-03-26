@@ -23,3 +23,11 @@ class Food_Word(Base):
     @staticmethod
     def find_match(word):
         return db_session.query(Food_Word).filter_by(simplified=word).first()
+
+    @staticmethod
+    def get_all_words():
+        words = []
+        food_words = db_session.query(Food_Word).all()
+        for word in food_words:
+            words.append(word.simplified)
+        return words

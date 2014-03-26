@@ -68,4 +68,13 @@ class Dish(Base):
 
         return results
 
+    @staticmethod
+    def get_all_dishes():
+        dish_names = []
+        dishes = db_session.query(Dish).all()
+        for dish in dishes:
+            dish_names.append(dish.chin_name)
+        return dish_names
+
+
 
