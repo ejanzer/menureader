@@ -5,6 +5,7 @@ import os
 from urllib import urlopen
 from werkzeug.utils import secure_filename
 
+from config import SECRET_KEY
 from model.model import Dish, User
 from tesseract.pytesser import image_file_to_string
 from normalize import normalize_image
@@ -14,7 +15,7 @@ UPLOAD_FOLDER = "./image_uploads"
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 
 app = Flask(__name__)
-app.secret_key = "secret"
+app.secret_key = SECRET_KEY
 
 # Specify the path to the upload folder
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
