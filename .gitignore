@@ -2,3 +2,4 @@
 /image_uploads
 *.pyc
 /ngrok
+.env
