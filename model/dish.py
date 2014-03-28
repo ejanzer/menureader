@@ -17,15 +17,21 @@ class Dish(Base):
 
     def get_json(self):
         data = {
-            'dish': {
-                'id': self.id,
-                'chin_name': self.chin_name,
-                'eng_name': self.eng_name,
-            }
+            'dish': [
+                {'Chinese': self.chin_name},
+                {'English': self.eng_name},
+            ]
         }
+
+        if self.desc:
+            data['dish'].append({'description': self.desc})
+
+        if self.pinyin:
+            data['pinyin'].append({'pinyin': self.pinyin})
+
         if self.reviews:
-            reviews = [{'username': review.user.username, 'date': format_date(review.date), 'text': review.text} for review in self.reviews]
-            data['dish']['reviews'] = reviews
+            reviews = [{review.user.username: "%s (%s)" % (review.text, format_date(review.date))} for review in self.reviews]
+            data['reviews'] = reviews
 
         if self.dish_tags:
             tags_dict = {}
@@ -36,8 +42,8 @@ class Dish(Base):
                 else:
                     tags_dict[name] = 1
 
-            tags = {name: count for name, count in tags_dict.iteritems()}
-            data['dish']['tags'] = tags
+            tags = [{name: count} for name, count in tags_dict.iteritems()]
+            data['tags'] = tags
 
         return data
 

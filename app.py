@@ -116,6 +116,7 @@ def view_user(id):
 def search(text):
     # Returns search data for a particular query.
     results = search_dish_name(text)
+    print json.dumps(results)
     return json.dumps(results)
 
 @app.route("/review/new", methods=["POST"])
