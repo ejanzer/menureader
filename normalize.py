@@ -5,6 +5,91 @@ from skimage.morphology import skeletonize, dilation, selem, opening, closing
 # Threshold offset to help with antialiasing problems.
 THRESHOLD_OFFSET = 20
 
+# Templates for Stentiford's acute angle emphasis step.
+D1 = [
+    [1,1,0,1,1],
+    [1,1,0,1,1],
+    [1,1,1,1,1],
+    [1,1,1,1,1],
+    ['*',1,1,1,'*']
+]
+
+D2 = [
+    [1,0,0,1,1],
+    [1,1,0,1,1],
+    [1,1,1,1,1],
+    [1,1,1,1,1],
+    ['*',1,1,1,'*']
+]
+
+D3 = [
+    [1,1,0,0,1],
+    [1,1,0,1,1],
+    [1,1,1,1,1],
+    [1,1,1,1,1],
+    ['*',1,1,1,'*']
+]
+
+D4 = [
+    [1,0,0,1,1],
+    [1,1,0,1,1],
+    [1,1,1,1,1],
+    [1,1,1,1,1],
+    ['*',1,1,1,'*']
+]
+
+D5 = [
+    [1,1,0,0,1],
+    [1,1,0,0,1],
+    [1,1,1,1,1],
+    [1,1,1,1,1],
+    ['*',1,1,1,'*']
+]
+
+U1 = [
+    ['*',1,1,1,'*'],
+    [1,1,1,1,1],
+    [1,1,1,1,1],
+    [1,1,0,1,1],
+    [1,1,0,1,1]
+]
+
+U2 = [
+    ['*',1,1,1,'*'],
+    [1,1,1,1,1],
+    [1,1,1,1,1],
+    [1,1,0,1,1],
+    [1,0,0,1,1]
+]
+
+U3 = [
+    ['*',1,1,1,'*'],
+    [1,1,1,1,1],
+    [1,1,1,1,1],
+    [1,1,0,1,1],
+    [1,1,0,0,1]
+]
+
+U4 = [
+    ['*',1,1,1,'*'],
+    [1,1,1,1,1],
+    [1,1,1,1,1],
+    [1,0,0,1,1],
+    [1,0,0,1,1]
+]
+
+U5 = [
+    ['*',1,1,1,'*'],
+    [1,1,1,1,1],
+    [1,1,1,1,1],
+    [1,1,0,0,1],
+    [1,1,0,0,1]
+]
+
+TEMPLATES = [D1, D2, D3, D4, D5, U1, U2, U3, U4, U5]
+
+########### STANDARD PREPROCESSING ###########
+
 # TODO: check if the image is really an image, for security purposes.
 def check_image(im):
     pass
@@ -14,16 +99,19 @@ def check_image(im):
 def sample_corners(im):
     pass
 
-def get_threshold(im):
-    """Get the threshold for determining whether a pixel turns to white or black."""
-    # get_data returns an array of all pixel values in image.
-    pixel_values = im.getdata()
-    average = sum(pixel_values)/len(pixel_values)
+def smooth_and_grayscale(im):
+    """Prepare an image for processing by running through a smoothing filter and 
+    converting to grayscale"""
+    im = im.filter(ImageFilter.SMOOTH_MORE)
+    im = im.filter(ImageFilter.SMOOTH_MORE)
 
-    # using a treshold offset to deal with antialiasing... remove if it doesn't work
-    return average - THRESHOLD_OFFSET
+    if im.mode != 'L':
+        im = im.convert('L')
+
+    return im
 
 
+########### THRESHOLDING/IMAGE BINARIZATION ###########
 def binarize(im):
     """Remove background noise from image by changing all pixels to white or black."""
     threshold = get_threshold(im)
@@ -40,31 +128,27 @@ def binarize(im):
             
     return im
 
+def get_threshold(im):
+    """Get the threshold for determining whether a pixel turns to white or black."""
+    # get_data returns an array of all pixel values in image.
+    pixel_values = im.getdata()
+    average = sum(pixel_values)/len(pixel_values)
 
-def smooth_and_grayscale(im):
-    """Prepare an image for processing by running through a smoothing filter and 
-    converting to grayscale"""
-    im = im.filter(ImageFilter.SMOOTH_MORE)
-    im = im.filter(ImageFilter.SMOOTH_MORE)
+    # using a treshold offset to deal with antialiasing... remove if it doesn't work
+    return average - THRESHOLD_OFFSET
 
-    if im.mode != 'L':
-        im = im.convert('L')
 
-    return im
-
-def thin_image(im):
+########### THINNING/SKELETONIZING IMAGE ###########
+def thin_image(pix):
     """Thin ("skeletonize") a binarized image using 
     scikit-image.morphology.skeletonize()."""
-
-    pix = im_to_trutharray(im)
 
     # Skeletonize removes layers of the foreground, leaving only a skeleton 
     thinned_pix = skeletonize(pix)
 
-    thinned_im = trutharray_to_im(thinned_pix)
+    return thinned_pix
 
-    return thinned_im
-
+########### CONVERTING IMAGE DATA FOR USE BY SCIKIT-IMAGE ###########
 def im_to_trutharray(im):
     # First convert image to numpy array of pixel values
     pix = numpy.array(im)
@@ -96,32 +180,28 @@ def trutharray_to_im(ndarray):
 
     return im
 
-def opening_image(ndarray):
-    opened = opening(ndarray, selem.square(3))
-    return opened
+########### STENTIFORD'S IMAGE PREPROCESSING: SMOOTHING AND ACUTE ANGLE EMPHASIS ###########
 
-def closing_image(ndarray):
-    closed = closing(ndarray, selem.square(3))
-    return closed
-
-def dilate(ndarray):
-    dilated = dilation(ndarray, selem.square(3))
-    return dilated
-
-def erode(ndarray):
-    pass
-
-def stentiford_smoothing(pix):
-    for i in range(1, len(pix) - 1):
-        for j in range(1, len(pix[i]) - 1):
-            if num_black_neighbors(pix, i, j) < 2 and connectivity(pix, i, j) < 2:
-                pix[i][j] = 1
-
-
-def get_neighbors(pix, i, j):
+def smooth_stentiford(pix):
+    """Get rid of 'spurious projections' on the image by removing (changing to white) any black pixels that
+    have 2 or fewer black neighbors and have a connectivity number less than two."""
 
     # TODO: What do I do on the edges? This won't work until I figure that out...
+    for i in range(1, len(pix) - 1):
+        for j in range(1, len(pix[i]) - 1):
+            if num_black_neighbors(pix, i, j) <= 2 and connectivity(pix, i, j) < 2:
+                pix[i][j] = 1
 
+def emphasize_acute_angles(pix):
+    """Reduce necking for image thinning/skeletonization by turning pixels on the interior of an acute angle to white."""
+    for i in range(2, len(pix) - 2):
+        for j in range(2, len(pix) - 2):
+            if pix[i][j] == 1 and matches_templates(pix, i, j):
+                pix[i][j] = 0
+
+def get_neighbors_1(pix, i, j):
+    """Returns all neighbors within a 1-pixel radius of a pixel as an array, 
+    starting on the right and going counterclockwise."""
     neighbors = [
         pix[i][j+1],
         pix[i+1][j+1],
@@ -135,9 +215,14 @@ def get_neighbors(pix, i, j):
 
     return neighbors
 
+def get_neighbors_2(pix, i, j):
+    """Get a 5x5 grid of the neighbors around the pixel at i, j"""
+    neighbors = [pix[i-2][j-2:j+3], pix[i-1][j-2:j+3], pix[i][j-2:j+3], pix[i+1][j-2:j+3], pix[i+2][j-2:j+3]]
+    return neighbors
 
 def num_black_neighbors(pix, i, j):
-    neighbors = get_neighbors(pix, i, j)
+    """Return the number of black (foreground) neighbors a pixel has."""
+    neighbors = get_neighbors_1(pix, i, j)
 
     count = 0
 
@@ -148,7 +233,11 @@ def num_black_neighbors(pix, i, j):
     return count
 
 def connectivity(pix, i, j):
-    neighbors = get_neighbors(pix, i, j)
+    """Return the connectivity number of a pixel in an image.
+    Connectivity is defined as the number of regions a pixel connects, measured by
+    how many times you change from background to foreground or vice versa as you iterate
+    over its immediate neighbors, starting on the right and going counterclockwise."""
+    neighbors = get_neighbors_1(pix, i, j)
     
     last = neighbors[0]
     conn = 0
@@ -161,16 +250,44 @@ def connectivity(pix, i, j):
     return conn
 
 
+def matches_templates(pix, i, j):
+    """Check if a pixel's immediate surroundings match one of Stentiford's templates 
+    for acute angles."""
+    for template in TEMPLATES:
+        if check_template(pix, i, j, template):
+            return True
+
+    return False
+
+def check_template(pix, i, j, template):
+    """Check a pixel's surroundings against a certain template. Return true if the same, 
+    false if different. Ignore wildcards ('*')"""
+    neighbors = get_neighbors_2(pix, i, j)
+    for x in range(len(neighbors)):
+        for y in range(len(neighbors[x])):
+            if template[x][y] != '*' and template[x][y] != neighbors[x][y]:
+                return False
+
+    return True
+
 def normalize_image(path):
+    """Normalize an image."""
+
+    # Steps using PIL
     im = Image.open(path)
     im = smooth_and_grayscale(im)
-
-    pix = numpy.array(im)
-    pix = opening_image(pix)
-    pix = closing_image(pix)
-
-    im = Image.fromarray(pix)
     im = binarize(im)
-    im = thin_image(im)
+
+    # Steps using scikit-image
+    pix = im_to_trutharray(im)
+
+    # Stentiford preprocessing for image thinning.
+    smooth_stentiford(pix)
+    emphasize_acute_angles(pix)
+
+    # Thinning
+    pix = thin_image(pix)
+
+    im = trutharray_to_im(pix)
 
     im.save(path)
