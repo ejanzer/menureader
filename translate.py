@@ -2,6 +2,7 @@ from model.dish import Dish
 from model.dict_entry import Dict_Entry 
 from model.food_word import Food_Word 
 from model.base import db_session
+import config
 
 CHAINS = {}
 
@@ -127,12 +128,15 @@ def search_dish_name(text):
             results['translation'] = translation
 
             # Find similar dishes and add to results.
-            # similar_dishes = Dish.find_similar(text)
-            # similar_json = []            
-            # for similar_dish in similar_dishes:
-            #     similar_json.append(similar_dish.get_json())
+            similar_dishes = Dish.find_similar(text)
+            similar_json = []            
+            for similar_dish in similar_dishes:
+                dish_data = similar_dish.get_json_min()
+                print dish_data
+                similar_json.append(dish_data)
 
-            # results['similar'] = similar_json
+            if similar_json != []:
+                results['similar'] = similar_json
 
     return results
 

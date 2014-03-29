@@ -6,6 +6,8 @@ from sqlalchemy.orm import relationship, backref
 from base import Base, db_session
 from date import format_date
 
+import config
+
 class Dish(Base):
     __tablename__ = "dishes"
 
@@ -16,21 +18,23 @@ class Dish(Base):
     desc = Column(String(64), nullable=True)
 
     def get_json(self):
-        data = {
-            'dish': [
-                {'Chinese': self.chin_name},
-                {'English': self.eng_name},
-            ]
-        }
+        data = {}
+            
+        dish = [
+                {'title':'Chinese', 'data': self.chin_name},
+                {'title': 'English', 'data': self.eng_name},
+                ]
 
         if self.desc:
-            data['dish'].append({'description': self.desc})
+            dish.append({'title': 'description', 'data': self.desc})
 
         if self.pinyin:
-            data['pinyin'].append({'pinyin': self.pinyin})
+            dish.append({'title': 'pinyin', 'data': self.pinyin})
+
+        data['dish'] = dish
 
         if self.reviews:
-            reviews = [{review.user.username: "%s (%s)" % (review.text, format_date(review.date))} for review in self.reviews]
+            reviews = [{"username": review.user.username, "date": format_date(review.date), "text": review.text} for review in self.reviews]
             data['reviews'] = reviews
 
         if self.dish_tags:
@@ -42,10 +46,14 @@ class Dish(Base):
                 else:
                     tags_dict[name] = 1
 
-            tags = [{name: count} for name, count in tags_dict.iteritems()]
+            tags = [{'tag': name, 'count': str(count)} for name, count in tags_dict.iteritems()]
             data['tags'] = tags
 
         return data
+
+    def get_json_min(self):
+        similar = {'title': self.chin_name, 'data': self.eng_name }
+        return similar
 
     @staticmethod
     def get_dish_by_id(id):
