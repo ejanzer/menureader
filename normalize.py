@@ -141,7 +141,7 @@ def get_threshold(im):
 ########### THINNING/SKELETONIZING IMAGE ###########
 def thin_image(pix):
     """Thin ("skeletonize") a binarized image using 
-    scikit-image.morphology.skeletonize()."""
+    scikit-image.morphology.skeletonize(). Returns a copy, does not modify array in place."""
 
     # Skeletonize removes layers of the foreground, leaving only a skeleton 
     thinned_pix = skeletonize(pix)
@@ -165,6 +165,7 @@ def im_to_trutharray(im):
 
 def trutharray_to_im(ndarray):
     # Convert back to pixel array. PIL requires uint8 array
+    # Warning! This modifies the original array. Don't try to reuse after.
     pix = numpy.uint8(ndarray)
 
     # Convert from 1s and 0s back to pixel values (255 and 0)
@@ -182,22 +183,22 @@ def trutharray_to_im(ndarray):
 
 ########### STENTIFORD'S IMAGE PREPROCESSING: SMOOTHING AND ACUTE ANGLE EMPHASIS ###########
 
-def smooth_stentiford(pix):
+def smooth_and_emphasize_angles(pix):
     """Get rid of 'spurious projections' on the image by removing (changing to white) any black pixels that
-    have 2 or fewer black neighbors and have a connectivity number less than two."""
-
+    have 2 or fewer black neighbors and have a connectivity number less than two.
+    Reduce necking for image thinning/skeletonization by turning pixels on the interior of an acute angle to white."""
+    
     # TODO: What do I do on the edges? This won't work until I figure that out...
-    for i in range(1, len(pix) - 1):
-        for j in range(1, len(pix[i]) - 1):
-            if num_black_neighbors(pix, i, j) <= 2 and connectivity(pix, i, j) < 2:
-                pix[i][j] = 1
-
-def emphasize_acute_angles(pix):
-    """Reduce necking for image thinning/skeletonization by turning pixels on the interior of an acute angle to white."""
     for i in range(2, len(pix) - 2):
-        for j in range(2, len(pix) - 2):
-            if pix[i][j] == 1 and matches_templates(pix, i, j):
+        for j in range(2, len(pix[i]) - 2):
+            if pix[i][j] == 1 and (num_black_neighbors(pix, i, j) <= 2 and connectivity(pix, i, j) < 2) or matches_templates(pix, i, j):
                 pix[i][j] = 0
+
+# def emphasize_acute_angles(pix):
+#     for i in range(2, len(pix) - 2):
+#         for j in range(2, len(pix) - 2):
+#             if pix[i][j] == 1 and matches_templates(pix, i, j):
+#                 pix[i][j] = 0
 
 def get_neighbors_1(pix, i, j):
     """Returns all neighbors within a 1-pixel radius of a pixel as an array, 
@@ -270,6 +271,9 @@ def check_template(pix, i, j, template):
 
     return True
 
+
+######## MAIN FUNCTION #########
+
 def normalize_image(path):
     """Normalize an image."""
 
@@ -282,8 +286,7 @@ def normalize_image(path):
     pix = im_to_trutharray(im)
 
     # Stentiford preprocessing for image thinning.
-    smooth_stentiford(pix)
-    emphasize_acute_angles(pix)
+    smooth_and_emphasize_angles(pix)
 
     # Thinning
     pix = thin_image(pix)
