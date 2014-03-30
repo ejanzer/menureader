@@ -126,15 +126,16 @@ def search_dish_name(text):
             results['translation'] = translation
 
             # Find similar dishes and add to results.
-            similar_dishes = Dish.find_similar(text)
-            similar_json = []            
-            for similar_dish in similar_dishes:
-                dish_data = similar_dish.get_json_min()
-                print dish_data
-                similar_json.append(dish_data)
+            if len(text > 1):
+                similar_dishes = Dish.find_similar(text)
+                similar_json = []            
+                for similar_dish in similar_dishes:
+                    dish_data = similar_dish.get_json_min()
+                    print dish_data
+                    similar_json.append(dish_data)
 
-            if similar_json != []:
-                results['similar'] = similar_json
+                if similar_json != []:
+                    results['similar'] = similar_json
 
     return results
 
