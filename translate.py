@@ -110,7 +110,6 @@ def find_substitutes(text):
 
 
 def search_dish_name(text):
-    print "Searching for text", text
     results = {}
     if type(text) != unicode:
         text = text.decode('utf-8')
@@ -120,7 +119,6 @@ def search_dish_name(text):
     else:
         # Find a matching dish, if it exists.
         match = Dish.find_match(text)
-        print "match is", match
         if match:
             results = match.get_json()
         else:

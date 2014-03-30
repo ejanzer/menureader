@@ -62,9 +62,6 @@ def signup():
 
 @app.route("/upload", methods=["POST"])
 def upload():
-    print "request.data", len(request.data)
-    print "request.files", len(request.files)
-    print "request.form", len(request.form)
     if request.data:
         file = request.data
         now = datetime.datetime.utcnow()
@@ -114,9 +111,10 @@ def view_user(id):
 
 @app.route("/search/<string:text>")
 def search(text):
+    print "Searching for text: ", text
     # Returns search data for a particular query.
     results = search_dish_name(text)
-    print json.dumps(results)
+    print "Results: ", json.dumps(results)
     return json.dumps(results)
 
 @app.route("/review/new", methods=["POST"])
