@@ -279,18 +279,25 @@ def normalize_image(path):
 
     # Steps using PIL
     im = Image.open(path)
+
+    print "Smoothing image."
     im = smooth_and_grayscale(im)
+
+    print "Binarizing image."
     im = binarize(im)
 
     # Steps using scikit-image
     pix = im_to_trutharray(im)
 
+    print "Stentiford smoothing and emphasizing."
     # Stentiford preprocessing for image thinning.
     smooth_and_emphasize_angles(pix)
 
+    print "Thinning image."
     # Thinning
     pix = thin_image(pix)
 
     im = trutharray_to_im(pix)
 
+    print "Saving image."
     im.save(path)

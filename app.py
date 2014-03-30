@@ -62,6 +62,7 @@ def signup():
 
 @app.route("/upload", methods=["POST"])
 def upload():
+    print "Received upload."
     if request.data:
         file = request.data
         now = datetime.datetime.utcnow()
@@ -71,16 +72,20 @@ def upload():
         image_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
         print image_path
 
+        print "Writing file."
         with open(image_path, 'wb') as f:
             f.write(file)
 
+        print "Normalizing image."
         # do some preprocessing on the image to optimize it for Tesseract
         normalize_image(image_path)
 
+        print "Sending to Tesseract."
         # run the image through tesseract and extract text
         text = image_file_to_string(image_path, lang="chi_sim", graceful_errors=True)
         text = text.strip()
-        print text
+        print "Received text from Tesseract: ", text
+        print "Sending to search."
         return redirect(url_for("search", text=text))
 
 @app.route("/dish/<int:id>")
