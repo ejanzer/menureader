@@ -118,6 +118,7 @@ def view_user(id):
 @app.route("/search/<string:text>")
 def search(text):
     start = datetime.datetime.now()
+    print "Searching for text:", text
     # Returns search data for a particular query.
     results = search_dish_name(text)
     time_elapsed("Search and translate", start)
