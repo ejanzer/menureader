@@ -126,7 +126,7 @@ def search_dish_name(text):
             results['translation'] = translation
 
             # Find similar dishes and add to results.
-            if len(text > 1):
+            if len(text) > 1:
                 similar_dishes = Dish.find_similar(text)
                 similar_json = []            
                 for similar_dish in similar_dishes:
