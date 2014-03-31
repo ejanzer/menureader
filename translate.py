@@ -3,6 +3,9 @@ from model.dict_entry import Dict_Entry
 from model.food_word import Food_Word 
 from model.base import db_session
 import config
+import datetime as dt
+
+from timing import time_elapsed
 
 CHAINS = {}
 
@@ -68,8 +71,11 @@ def check_words(combinations):
 
 def translate(text):
     """Attempt to translate text using food_words and then the CEDICT dictionary."""
+    start = dt.datetime.now()
     words = find_words(text)
+    start = time_elapsed("Find words", start)
     results = check_words(words)
+    start = time_elapsed("Check words", start)
     return results
 
 def find_substitutes(text):
@@ -110,6 +116,8 @@ def find_substitutes(text):
 
 
 def search_dish_name(text):
+    start = dt.datetime.now()
+
     results = {}
     if type(text) != unicode:
         text = text.decode('utf-8')
@@ -121,13 +129,16 @@ def search_dish_name(text):
         match = Dish.find_match(text)
         if match:
             results = match.get_json()
+            start = time_elapsed("Dish lookup", start)
         else:
             translation = translate(text)
+            start = time_elapsed("Translation", start)
             results['translation'] = translation
 
             # Find similar dishes and add to results.
             if len(text) > 1:
                 similar_dishes = Dish.find_similar(text)
+                start = time_elapsed("Similar dish lookup", start)
                 similar_json = []            
                 for similar_dish in similar_dishes:
                     dish_data = similar_dish.get_json_min()

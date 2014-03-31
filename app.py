@@ -10,6 +10,7 @@ from model.model import Dish, User
 from tesseract.pytesser import image_file_to_string
 from normalize import normalize_image
 from translate import search_dish_name
+from timing import time_elapsed
 
 UPLOAD_FOLDER = "./image_uploads"
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
@@ -62,7 +63,6 @@ def signup():
 
 @app.route("/upload", methods=["POST"])
 def upload():
-    print "Received upload."
     if request.data:
         file = request.data
         now = datetime.datetime.utcnow()
@@ -72,20 +72,21 @@ def upload():
         image_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
         print image_path
 
-        print "Writing file."
         with open(image_path, 'wb') as f:
             f.write(file)
 
-        print "Normalizing image."
+        start = datetime.datetime.now()
+        start = time_elapsed("Writing file", start)
+
         # do some preprocessing on the image to optimize it for Tesseract
         normalize_image(image_path)
+        start = time_elapsed("Normalization", start)
 
-        print "Sending to Tesseract."
         # run the image through tesseract and extract text
         text = image_file_to_string(image_path, lang="chi_sim", graceful_errors=True)
         text = text.strip()
         print "Received text from Tesseract: ", text
-        print "Sending to search."
+        start = time_elapsed("Tesseract", start)
         return redirect(url_for("search", text=text))
 
 @app.route("/dish/<int:id>")
@@ -116,9 +117,10 @@ def view_user(id):
 
 @app.route("/search/<string:text>")
 def search(text):
-    print "Searching for text: ", text
+    start = datetime.datetime.now()
     # Returns search data for a particular query.
     results = search_dish_name(text)
+    time_elapsed("Search and translate", start)
     print "Results: ", json.dumps(results)
     return json.dumps(results)
 

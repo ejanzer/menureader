@@ -1,6 +1,8 @@
 from PIL import Image, ImageOps, ImageFilter
 import numpy
 from skimage.morphology import skeletonize, dilation, selem, opening, closing
+import datetime as dt
+from timing import time_elapsed
 
 # Threshold offset to help with antialiasing problems.
 THRESHOLD_OFFSET = 20
@@ -275,27 +277,28 @@ def check_template(pix, i, j, template):
 def normalize_image(path):
     """Normalize an image."""
 
+    start = dt.datetime.now()
+
     # Steps using PIL
     im = Image.open(path)
 
-    print "Smoothing image."
     im = smooth_and_grayscale(im)
+    start = time_elapsed("Smoothing", start)
 
-    print "Binarizing image."
     im = binarize(im)
+    start = time_elapsed("Binarization", start)
 
     # Steps using scikit-image
     pix = im_to_trutharray(im)
 
-    print "Stentiford smoothing and emphasizing."
     # Stentiford preprocessing for image thinning.
     smooth_and_emphasize_angles(pix)
+    start = time_elapsed("Stentiford preprocessing", start)
 
-    print "Thinning image."
     # Thinning
     pix = thin_image(pix)
+    start = time_elapsed("Thinning", start)
 
     im = trutharray_to_im(pix)
 
-    print "Saving image."
     im.save(path)
