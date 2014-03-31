@@ -6,7 +6,7 @@ from urllib import urlopen
 from werkzeug.utils import secure_filename
 
 from config import SECRET_KEY
-from model.model import Dish, User
+from model.model import Dish, User, Tag
 from tesseract.pytesser import image_file_to_string
 from normalize import normalize_image
 from translate import search_dish_name
@@ -85,8 +85,14 @@ def upload():
         # run the image through tesseract and extract text
         text = image_file_to_string(image_path, lang="chi_sim", graceful_errors=True)
         text = text.strip()
-        print "Received text from Tesseract: ", text
         start = time_elapsed("Tesseract", start)
+
+        if not text:
+            print "No text received from Tesseract!"
+            error_data = {"error": "No results found. Please try again."}
+            return json.dumps(error_data)
+
+        print "Received text from Tesseract: ", text
         return redirect(url_for("search", text=text))
 
 @app.route("/dish/<int:id>")
@@ -129,6 +135,14 @@ def search(text):
 def add_review():
     # Accepts post data and creates a review object.
     pass
+
+@app.route("/tag/<string:name>")
+def view_tag(name):
+    # View all dishes for a certain tag.
+    tag = Tag.get_tag_by_name(name)
+    data = {}
+    data['similar'] = tag.get_dishes()
+    return json.dumps(data)
 
 if __name__ == "__main__":
     # Change debug to False when deploying, probably.
