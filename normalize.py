@@ -191,14 +191,21 @@ def smooth_and_emphasize_angles(pix):
     # TODO: What do I do on the edges? This won't work until I figure that out...
     for i in range(2, len(pix) - 2):
         for j in range(2, len(pix[i]) - 2):
-            if pix[i][j] == 1 and (num_black_neighbors(pix, i, j) <= 2 and connectivity(pix, i, j) < 2) or matches_templates(pix, i, j):
+            if pix[i][j] == 1 and (is_spurious_projection(pix, i, j) or is_acute_angle(pix, i, j)):
                 pix[i][j] = 0
 
-# def emphasize_acute_angles(pix):
-#     for i in range(2, len(pix) - 2):
-#         for j in range(2, len(pix) - 2):
-#             if pix[i][j] == 1 and matches_templates(pix, i, j):
-#                 pix[i][j] = 0
+
+def is_spurious_projection(pix, i, j):
+    return num_black_neighbors(pix, i, j) <=2 and connectivity(pix, i, j) < 2
+
+def is_acute_angle(pix, i, j):
+    """Check if a pixel's immediate surroundings match one of Stentiford's templates 
+    for acute angles."""
+    for template in TEMPLATES:
+        if check_template(pix, i, j, template):
+            return True
+
+    return False
 
 def get_neighbors_1(pix, i, j):
     """Returns all neighbors within a 1-pixel radius of a pixel as an array, 
@@ -228,7 +235,7 @@ def num_black_neighbors(pix, i, j):
     count = 0
 
     for neighbor in neighbors:
-        if neighbor == 0:
+        if neighbor == 1:
             count += 1
 
     return count
@@ -250,15 +257,6 @@ def connectivity(pix, i, j):
 
     return conn
 
-
-def matches_templates(pix, i, j):
-    """Check if a pixel's immediate surroundings match one of Stentiford's templates 
-    for acute angles."""
-    for template in TEMPLATES:
-        if check_template(pix, i, j, template):
-            return True
-
-    return False
 
 def check_template(pix, i, j, template):
     """Check a pixel's surroundings against a certain template. Return true if the same, 
