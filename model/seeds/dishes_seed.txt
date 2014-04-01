@@ -1,20 +1,19 @@
-水煮鱼 | Sichuan poached sliced fish in hot chili oil
-毛血旺 | duck's blood, beef and tripe in spicy soup
+水煮鱼 | spicy boiled fish | Sichuan poached sliced fish in hot chili oil
+毛血旺 | blood, beef and tripe soup | duck's blood, beef and tripe in spicy soup
 牛肉丸 | beef meatballs
 东坡肘子 | Dongpo pork shoulder | traditional dish said to have been created by Northern Song dynasty writer Su Dongpo 蘇東坡|苏东坡
 馋嘴蛙 | sautéed bullfrog with chili sauce
 宫保鸡丁 | Kung Pao Chicken | spicy diced chicken
 蘑菇汤 | mushroom soup
-夫妻肺片 | popular Sichuan cold dish made of thinly sliced beef and beef offal
+夫妻肺片 | Sichuan beef and offal | popular Sichuan cold dish made of thinly sliced beef and beef offal
 糖醋里脊 | sweet and sour pork
 烤鸭 | roast duck
 牛肉面 | beef noodle soup
 五花肉 | streaky pork
-宫爆鸡丁 | gong bao chicken | spicy diced chicken
 麻婆豆腐 | mapo tofu | stir-fried beancurd in chili sauce
 肉夹馍 | meat wedged in steamed bun | "Chinese burger"/sliced meat sandwich popular in north China
-担担面 | Sichuan noodles with a spicy and numbing sauce
-鱼香肉丝 | pork strips stir-fried with yuxiang
+担担面 | dan dan noodles | Sichuan noodles with a spicy and numbing sauce
+鱼香肉丝 | yuxiang pork | pork strips stir-fried with yuxiang ("fish flavoring")
 土豆泥 | mashed potato
 佛跳墙 | Buddha jumps over the wall | name for a Chinese dish that uses many non-vegetarian ingredients
 烧饼 | baked sesame seed-coated cake
@@ -25,20 +24,16 @@
 虾饺 | prawn dumplings
 炸酱面 | zha jiang noodles | ground pork simmered with salty fermented soybean paste (or other sauce) over thick wheat noodles
 杏仁豆腐 | almond junket
-比萨 | pizza
 北京烤鸭 | Peking roast duck
 爆肚 | deep fried tripe
 滇红 | Dian Hong tea
-拌饭 | bibimbap
 寿桃 | peaches of immortality | fresh or confectionery peaches offered as a birthday gift
 凤爪 | chicken feet
-意面 | spaghetti | abbr. for 意大利麵|意大利面[Yi4 da4 li4 mian4]
 烩面 | braised noodles/stewed noodles
 米线 | rice-flour noodles
 凉皮 | liangpi (noodle-like dish)
-鸳鸯锅 | Mandarin Ducks" pot | hot pot with a divider containing spicy soup on one side mild soup on the other
+鸳鸯锅 | Mandarin Ducks pot | hot pot with a divider containing spicy soup on one side mild soup on the other
 手抓羊肉 | hand-held mutton | (mutton pieces on the bone, eaten with the fingers)
-提拉米苏 | tiramisu
 东坡肉 | stir-fried pork | favorite of Northern Song writer Su Shi 蘇軾|苏轼, a.k.a. Su Dongpo 蘇東坡|苏东坡
 狮子头 | pork meatballs | lit. lion's head
 红烧肉 | red-cooked meat (pork) | simmer fried meat
@@ -48,10 +43,8 @@
 燕窝 | swallow's nest
 白切鸡 | Cantonese poached chicken | Cantonese poached chicken, known as white cut chicken
 回锅肉 | twice cooked pork
-鱼翅汤 | shark fin soup
 甜甜圈 | doughnut
-拿铁 | latte (loanword)
-珍珠奶茶 | pearl milk tea/tapioca milk tea/bubble milk tea
+珍珠奶茶 | pearl milk tea | tapioca milk tea, bubble milk tea
 八公山豆腐 | bang tofu
 明珠酥鲍 | bright pearl abalone
 虫草炖老鸭 | caterpillar fungus duck
@@ -78,7 +71,6 @@
 冬瓜汤 | winter melon soup
 云吞面 | wonton noodles
 扬州炒饭 | Yeung Chow fried rice
-油条 | youtiao
 炸两 | Zhaliang
 鱼生 | Yusheng
 薄饼 | Popiah
@@ -89,8 +81,6 @@
 海南鸡饭 | Hainanese chicken rice
 文昌鸡 | Wenchang chicken
 重庆辣子鸡 | Chongqing spicy deep-fried chicken
-担担面 | Dandan noodles
-夫妻肺片 | Fuqi Feipian
 四川火锅 | Sichuan hotpot
 樟茶鸭 | Zhangcha duck
 过桥米线 | Over Bridge rice noodles
@@ -206,53 +196,9 @@
 紫菜湯 | seaweed soup 
 咕咾肉 | sweet and sour pork
 叉烧 | barbecue pork
-北京烤鸭 | beijing roast duck
 酸辣汤 | hot and sour soup
 火锅 | hot pot
 糖水 | sweet soup
-明珠酥鲍 | bright pearl abalone
-虫草炖老鸭 | caterpillar fungus duck
-蟹连鱼肚 | crab and fish stomachs
-海棠酥 | crab-apple flower cake
-干炒牛河 | beef fried noodles
-燕窝 | bird's nest soup
-芝麻糊 | black sesame soup
-海皇羹 | Cantonese seafood soup
-炸子鸡 | crispy fried chicken
-陈皮芋头鸭 | duck with taro
-龟苓膏 | guilinggao
-煲仔饭 | little pan rice
-红豆沙 | red bean soup
-乳鸽 | roast squab
-烧乳猪 | roast suckling pig
-海参 | sea cucumber
-海鲜雀巢 | seafood with bird's nest
-鱼翅汤 | shark fin soup
-银耳汤 | snow fungus soup
-生炒排骨 | sour spare ribs
-南北杏西洋菜猪骨汤 | spare ribs soup with watercress and apricot kernels
-白切鸡 | white cut chicken
-冬瓜汤 | winter melon soup
-云吞面 | wonton noodles
-扬州炒饭 | Yeung Chow fried rice
-炸两 | Zhaliang
-鱼生 | Yusheng
-薄饼 | Popiah
-佛跳墙 | Buddha jumps over the wall
-福建式炒饭 | Fried rice in Fujian style
-蚵仔煎 | Oyster omelette
-薄饼 | Popiah
-燕皮 | Yanpi
-海南鸡饭 | Hainanese chicken rice
-文昌鸡 | Wenchang chicken
-重庆辣子鸡 | Chongqing spicy deep-fried chicken
-担担面 | Dandan noodles
-夫妻肺片 | Fuqi Feipian
-樟茶鸭 | Zhangcha duck
-过桥米线 | Over Bridge rice noodles
-叫化鸡 | Beggar's chicken 
-干菜焖肉 | braised sliced pork with preserved vegetables
-糟鸡 | cold chicken cooked in wine   
 东坡肉 | Dongpo braised pork  
 清汤鱼圆 | fish ball in light soup
 生爆鳝片 | fried eel slices  
@@ -282,7 +228,6 @@
 蝦仁炒飯 | fried rice with shrimp
 蛋花湯 | egg and vegetable soup
 紫菜湯 | seaweed soup
-酸辣湯 | hot and sour soup
 火腿炖鞭笋 | Ham and "Whippy" Bamboo Stew
 火腿炖甲鱼 | Stewed turtle with ham
 符离集烧鸡 | Red-cooked chicken
@@ -336,96 +281,8 @@
 糖醋黄河鲤鱼 | sweet and sour yellow river carp
 鸡汁虾仁 | chicken juice shrimps
 红烧大虾 | king prawns stewed in brown sauce
-清汤鲍鱼 | abalone broth
 崂山十珍会 | Laoshan ten treasures meeting
 蜜汁梨球 | fried pear balls with honey sauce
-T骨牛排 | T-bone steak 
-普切塔 | Bruschetta 
-意大利肉卷 | Cannelloni 
-红白小碟 | Caprese salad 
-烤羊排 | Lamb rib chops 
-米兰式肉排 | Milanese veal cutlet 
-烤三文鱼 | Grilled salmon 
-土豆球 | Gnocchi 
-海鲜沙拉 | Seafood salad 
-意式千层面 | Lasagna bolognese 
-莫泽雷勒干酪夹心面包 | Deep-fried mozzarella sandwich 
-蔬菜通心粉汤 | Minestrone soup 
-帕尔马干酪茄子 | Aubergine Parmigiana 
-辣味通心粉 | Penne all'arrabbiata 
-虾仁芦笋汁宽面 | Fettuccine with prawns and asparagus 
-披萨 | Pizza 
-意大利饺子 | Ravioli 
-米兰式烩饭 | Saffron risotto 
-海鲜番茄意大利饭 | Seafood Risotto 
-蛤蜊意大利面 | Spaghetti with clams 
-白汁意面 | Spaghetti carbonara 
-提拉米苏 | Tiramisu 
-意大利云吞 | Tortellini 
-青酱扁意面 | Linguine with pesto sauce 
-炸鸡配薯条 | Roast chicken with potatoes 
-肉酱宽面 | Fettuccine with ragu sauce 
-蘑菇汁牛柳 | Fillet steak in mushrooms sauce 
-意大利圣诞面包 | Panettone 
-樱饼 | Sakuramochi 
-草饼 | Kusamochi 
-大福饼 | Daihuku 
-铜锣烧 | Dorayaki 
-鲷鱼烧 | Taiyaki 
-寿司 | Sushi 
-生鱼片 | Sashimi 
-蕨饼 | Warabimochi 
-柏饼 | Kashiwamochi 
-红豆汤 | Zenzai 
-金平糖 | Konpeito 
-落雁 | Rakugan 
-大学芋 | Daigakuimo 
-甘酒 | Amazake 
-豆沙水果凉粉 | Anmitsu 
-栗金团 | Kurikinton 
-亲子饭 | Oyakodon 
-鳕鱼籽 | Tarako 
-章鱼烧 | Takoyaki 
-饭团 | Onigiri 
-茶泡饭 | Tyazuke 
-素面 | Soumen 
-天麸罗 | Tempura 
-七草粥 | Nanakusagayu 
-鱼糕 | Kamaboko 
-日式凉面 | Hiyashityuka 
-好炖 | Oden 
-纳豆 | Natto 
-牛肉饭 | Gyudon 
-烤鳗鱼 | Unagi 
-筑前煮 | Chikuzenni 
-炸猪排 | Pork Cutlet 
-乌冬面 | Udon 
-天麸罗盖饭 | Tendon 
-蒸鸡蛋羹 | Tyawanmushi 
-日式涮牛肉 | Syabusyabu 
-煮萝卜 | Hurohukidaikon 
-煮豆腐 | Yudoufu 
-梅干 | Umeboshi 
-荞麦面 | Soba 
-咸乌贼 | Ika No Shiokara 
-照烧 | Teriyaki 
-豆渣 | Okara 
-御节料理 | Osechi 
-寿喜烧 | Sukiyaki 
-押寿司 | Oshizushi 
-散寿司 | Chirashizushi 
-卷寿司 | Makizushi 
-石狩锅 | Ishikarinabe 
-抹茶 | Mattya 
-腌萝卜 | Takuan 
-杂煮 | Zouni 
-日式煎鸡蛋卷 | Dashimaki Tamago 
-日式炒面 | Yakisoba 
-烤茄子 | Yakinasu 
-猪排饭 | Katsudon 
-味噌汤 | Miso Soup 
-盐烤秋刀鱼 | Sanma No Shioyaki 
-红豆饭 | Sekihan 
 小面 | little noodles (Chongqing street food)
 焦饼 | scorched cake (Zhejiang snack)
 麻辣香锅 |  hot and numbing fragrant pot
@@ -437,10 +294,10 @@ T骨牛排 | T-bone steak
 松鼠鱼 |  squirrel fish
 牛肉焦饼 |  beef scorched cake
 干锅牛蛙 |  dry pot bullfrog
-铁锅牛蛙 |  iron cooking pot bullfrog
+铁锅牛蛙 |  bullfrog in an iron pot
 香辣美容蹄 |  spicy pig hoofs
 老妈蹄花 |  Mom's pig hoofs (Sichuan snack food)
-冷锅鱼 |  cold pot fish
+冷锅鱼 |  fish in a cold pot
 蓝莓山药 | yams with blueberry sauce
 泉水牛蛙 | freshwater bullfrog
 鸡翅中 | chicken wings
@@ -457,15 +314,42 @@ T骨牛排 | T-bone steak
 烤兔 |  roast rabbit
 干锅鸡 |  dry pot chicken
 口水鸡 |  saliva chicken
-鱼香 | fish-flavored
-清江 | Qing river
-丁 | diced
-串串 | kebabs
 蒸鱼 | steamed fish
-龙 | dragon
 鸡杂锅 | mixed chicken parts
 鲶鱼茄子 |  catfish with eggplant
 干锅兔头 |  dry pot rabbit head
 酸菜鱼 | fish with pickled vegetables
 香辣虾 |  fragrant spicy shrimp
 烤全鱼 | whole roast fish
+油泼扯面 | broad, belt-shaped noodles | popular in Shaanxi, also known as biángbiáng miàn
+地三鲜 | dish consisting of stir-fried potato, eggplant and green pepper
+铁板牛柳 | fillet beef teppanyaki (fast grilled on hot iron plate)
+鱼香茄子 | fish-flavored eggplant | eggplant cooked with yuxiang ("fish flavoring")
+香辣烤鱼 | fragrant spicy roast fish
+鱼豆腐 |  fish with tofu
+干炒牛河 | beef chow fun
+金牌馋嘴蛙 | gold medal sautéed bullfrog with chili sauce
+鲶鱼锅 |  pot of catfish
+清江鱼 |  Qingjiang river fish
+香辣清江鱼 |  fragrant spicy Qingjiang river fish
+白肉拌凉面 |  plain boiled pork mixed with cold noodles
+双椒鸡 |  double pepper chicken
+豆豉清江鱼 |  Qingjiang river fish in black bean sauce
+干锅鸭头 |  dry pot duck head
+红烧草菇 |  simmer-fried straw mushroom
+豆花鱼火锅 |  douhua fish hot pot
+鸡翅 |  chicken wings
+午餐肉 | lunchmeat
+鸭头 | duck head
+祖母菜花 |  grandma's cauliflower
+香锅虾 |  fragrant pot shrimp
+大锅鸭头 | duck in a big wok
+炝锅鱼 |  stir-fried fish
+蓝莓土豆泥 |  blueberry mashed potato
+鱼子豆腐 |  tofu with fish eggs
+烧鹅 |  roast goose
+芥末虾球 |  mustard shrimp balls
+绿莲甜辣虾 |  green lotus sweet spicy shrimp
+香辣烤鲶鱼 |  fragrant spicy roast catfish
+水煮肉 |  spicy boiled meat
+酸菜鲈鱼 |  pickled vegetables and bass (fish)

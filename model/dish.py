@@ -41,6 +41,7 @@ class Dish(Base):
             tags_dict = {}
             for dish_tag in self.dish_tags:
                 name = dish_tag.tag.name
+                tag_id = dish_tag.tag.id
                 if tags_dict.get(name):
                     tags_dict[name] += 1
                 else:

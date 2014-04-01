@@ -588,14 +588,11 @@ DQ冰淇淋 | Dairy Queen
 馒头 | steamed roll/steamed bun
 玉米饼 | corn cake/Mexican tortilla
 大马哈鱼 | chum salmon
-地三鲜 | dish consisting of stir-fried potato, eggplant and green pepper
 血肠 | blood sausage/blutwurst/black pudding
 煎饺 | fried dumpling
 莜面 | oat noodles or flour
-油泼扯面 | broad, belt-shaped noodles | popular in Shaanxi, also known as biángbiáng miàn
 拌面 | noodles served with soy sauce/sesame butter
 小龙虾 | crayfish/langoustine
-铁板牛柳 | fillet beef teppanyaki (fast grilled on hot iron plate)
 面条 | noodles
 炒面 | fried noodles
 汤面 | noodle soup
@@ -643,7 +640,6 @@ DQ冰淇淋 | Dairy Queen
 炸酱面 | noodles with sauce
 米饭 | rice
 炒饭 | fried rice
-麻婆豆腐 | mapo tofu
 豆奶 | soy milk
 臭豆腐 | stinky tofu
 酸菜 | fermented cabbage
@@ -696,7 +692,6 @@ DQ冰淇淋 | Dairy Queen
 油条 | deep-fried dough stick
 粥 | rice porridge
 螃蟹 | crab
-卤水墨鱼 | orange cuttlefish
 海参 | sea cucumber
 糕点 | pastries
 米粉肉 | rice flour meat
@@ -718,8 +713,6 @@ DQ冰淇淋 | Dairy Queen
 包子 | steamed stuffed bun
 水饺 | boiled dumpling
 培根 | bacon
-臭豆腐 | stinky tofu | strong-smelling preserved beancurd
-薯条 | french fries | french fried potatoes/chips
 锅贴 | fried dumpling/pot sticker
 蚵仔煎 | oyster omelette
 蒸饺 | steamed dumpling
@@ -752,3 +745,8 @@ DQ冰淇淋 | Dairy Queen
 面 | noodles
 酸 | sour
 宽粉 | wide noodles
+鱼香 | fish-flavored
+清江 | Qing river
+丁 | diced
+串串 | kebabs
+龙 | dragon
