@@ -8,7 +8,7 @@ from werkzeug.utils import secure_filename
 from config import SECRET_KEY
 from model.model import Dish, User, Tag
 from tesseract.pytesser import image_file_to_string
-from normalize import normalize_image
+from normalize import preprocess_image, smooth_and_thin_image
 from translate import search_dish_name
 from timing import time_elapsed
 
@@ -79,8 +79,8 @@ def upload():
         start = time_elapsed("Writing file", start)
 
         # do some preprocessing on the image to optimize it for Tesseract
-        normalize_image(image_path)
-        start = time_elapsed("Normalization", start)
+        preprocess_image(image_path)
+        start = time_elapsed("Preprocessing", start)
 
         # run the image through tesseract and extract text
         text = image_file_to_string(image_path, lang="chi_sim", graceful_errors=True)
@@ -88,9 +88,18 @@ def upload():
         start = time_elapsed("Tesseract", start)
 
         if not text:
-            print "No text received from Tesseract!"
-            error_data = {"error": "No results found. Please try again."}
-            return json.dumps(error_data)
+            # try thinning the image to see if it improves results from Tesseract
+            smooth_and_thin_image(image_path)
+
+            # try running through tesseract again
+            text = image_file_to_string(image_path, lang="chi_sim", graceful_errors=True)
+            text = text.strip()
+            start = time_elapsed("Tesseract", start)
+
+            if not text:
+                print "No text received from Tesseract!"
+                error_data = {"error": "No results found. Please try again."}
+                return json.dumps(error_data)
 
         print "Received text from Tesseract: ", text
         return redirect(url_for("search", text=text))

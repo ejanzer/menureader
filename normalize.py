@@ -273,10 +273,8 @@ def check_template(pix, i, j, template):
 
 
 ######## MAIN FUNCTION #########
-
-def normalize_image(path):
-    """Normalize an image."""
-
+def preprocess_image(path):
+    """Do preprocessing on image before sending to Tesseract."""
     start = dt.datetime.now()
 
     # Steps using PIL
@@ -287,6 +285,16 @@ def normalize_image(path):
 
     im = binarize(im)
     start = time_elapsed("Binarization", start)
+
+    im.save(path)
+
+def smooth_and_thin_image(path):
+    """Thin image"""
+
+    start = dt.datetime.now()
+
+    # Steps using PIL
+    im = Image.open(path)
 
     # Steps using scikit-image
     pix = im_to_trutharray(im)
