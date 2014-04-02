@@ -12,6 +12,7 @@ from review import Review
 from dish_tag import Dish_Tag 
 from rest_dish import Rest_Dish 
 from restaurant import Restaurant
+from image import Image
 from tag import Tag
 
 def seed_cedict():
@@ -48,8 +49,11 @@ def seed_dishes():
 
             chin_name = row[0]
             eng_name = row[1].lower()
-
-            dish = Dish(chin_name=chin_name, eng_name=eng_name)
+            if len(row) > 2:
+                desc = row[2]
+                dish = Dish(chin_name=chin_name, eng_name=eng_name, desc=desc)                                            
+            else:
+                dish = Dish(chin_name=chin_name, eng_name=eng_name)
             db_session.add(dish)
 
         try: 
@@ -67,7 +71,6 @@ def seed_food_words():
                 row[i] = row[i].decode('utf-8')
                 row[i] = row[i].strip()
 
-            print row
             simplified = row[0]
             english = row[1].lower()
 
@@ -100,6 +103,7 @@ def seed_restaurants():
     r2 = Restaurant(name="Fu Lam Mum")
     r3 = Restaurant(name="Chef Chu's")
     r4 = Restaurant(name="Queen House")
+    r5 = Restaurant(name="Cafe Macs")
     db_session.add(r1)
     db_session.add(r2)
     db_session.add(r3)
@@ -110,15 +114,25 @@ def seed_reviews():
     """Seed reviews with test data."""
 
     ##### Add a review for Hot and Sour Soup at Fu Lam Mum from Emily. #####
-    add_review(1, 107, 2, 1, "too spicy!")
+    add_review(1, 199, 2, 1, "too spicy!")
+
+    ##### Add a review for Hot and Sour Soup at Fu Lam Mum from Emily. #####
+    add_review(1, 199, 2, 1, "too spicy!")
 
     ##### Add a review for Kung Pao Chicken at Cafe Macs from Nick. #####
-    add_review(2, 13, 5, 2, "Very peanut\nMuch tasty\nWow")
+    add_review(2, 3, 5, 2, "Very peanut\nMuch tasty\nWow")
 
     ##### Add a review for Chongqing Chicken at Chef Zhao's from Emily. #####
-    add_review(1, 218, 1, 1, "nom so hard")
+    add_review(1, 83, 1, 1, "Yum! Spicy AND numbing. Best fried chicken ever.")
 
+    ##### Add a review for beef noodles at Queen House from Emily. #####
+    add_review(1, 1, 4, 4, "Really good. Beef is a little fatty, but homemade noodles are delicious. Huge portions!")
 
+    ##### Add a review for Hot and Sour Soup at Queen House from Nick. #####
+    add_review(2, 199, 4, 4, "Delicious!")
+
+    ##### Add a review for mapo tofu at Chef Zhao's from Emily. #####
+    add_review(1, 2, 1, 1, "Tastes just like Chen's mapo tofu in Chengdu!")
 
 def add_review(user_id, dish_id, rest_id, tag_id, text):
     now = datetime.datetime.now()
@@ -152,6 +166,21 @@ def seed_tags():
 
     db_session.commit()
 
+def seed_images():
+    with open("seeds/images_seed.txt") as f:
+        reader = csv.reader(f, delimiter="|")
+        for row in reader:
+            dish_id = row[0]
+            filename = row[1].strip()
+
+            image = Image(dish_id=dish_id, filename=filename)
+            db_session.add(image)
+
+    try: 
+        db_session.commit()
+    except sqlalchemy.exc.IntegrityError, e:
+        db_session.rollback()
+
 if __name__ == "__main__":
     # Uncomment and run as main to seed entire database.
     # Or, run in interactive mode and call the function for the table you want to seed.
@@ -159,9 +188,10 @@ if __name__ == "__main__":
     # seed_dishes()
     # seed_food_words()
     # seed_users()
-    # seed_reviews()
     # seed_tags()
     # seed_restaurants()
+    # seed_reviews()
+    # seed_images()
     pass
 
 

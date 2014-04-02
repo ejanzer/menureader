@@ -5,6 +5,7 @@ from sqlalchemy.orm import relationship, backref
 
 from base import Base, db_session
 from date import format_date
+from image import Image
 
 import config
 
@@ -34,8 +35,29 @@ class Dish(Base):
         data['dish'] = dish
 
         if self.reviews:
-            reviews = [{"username": review.user.username, "date": format_date(review.date), "text": review.text} for review in self.reviews]
+            reviews = []
+            for review in self.reviews:
+                print review
+                print "Rest dish id: ", review.rest_dish.id
+                print review.rest_dish.restaurant
+                print review.rest_dish.rest_id
+                print review.rest_dish.dish_id
+                print review.rest_dish.dish.eng_name
+                review_data = {
+                    'username': review.user.username,
+                    'date': format_date(review.date),
+                    'text': review.text,
+                    'restaurant': review.rest_dish.restaurant.name
+                }
+
+                reviews.append(review_data)
+
+            # reviews = [{"username": review.user.username, "date": format_date(review.date), "text": review.text, "restaurant": review.rest_dish.restaurant.name} for review in self.reviews]
             data['reviews'] = reviews
+
+        if self.images:
+            images = [Image.get_json(image.filename) for image in self.images]
+            data['images'] = images
 
         if self.dish_tags:
             tags_dict = {}
@@ -50,6 +72,7 @@ class Dish(Base):
             tags = [{'tag': name, 'count': str(count)} for name, count in tags_dict.iteritems()]
             data['tags'] = tags
 
+        print data.keys()
         return data
 
     def get_json_min(self):
