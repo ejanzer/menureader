@@ -1,19 +1,21 @@
-水煮鱼 | spicy boiled fish | Sichuan poached sliced fish in hot chili oil
+牛肉面 | beef noodle soup
+麻婆豆腐 | mapo tofu | stir-fried beancurd in chili sauce
+宫保鸡丁 | Kung Pao Chicken | spicy diced chicken
+北京烤鸭 | Peking roast duck
+回锅肉 | twice cooked pork
 毛血旺 | blood, beef and tripe soup | duck's blood, beef and tripe in spicy soup
+鱼香肉丝 | yuxiang pork | pork strips stir-fried with yuxiang ("fish flavoring")
+水煮鱼 | spicy boiled fish | Sichuan poached sliced fish in hot chili oil
 牛肉丸 | beef meatballs
 东坡肘子 | Dongpo pork shoulder | traditional dish said to have been created by Northern Song dynasty writer Su Dongpo 蘇東坡|苏东坡
 馋嘴蛙 | sautéed bullfrog with chili sauce
-宫保鸡丁 | Kung Pao Chicken | spicy diced chicken
 蘑菇汤 | mushroom soup
 夫妻肺片 | Sichuan beef and offal | popular Sichuan cold dish made of thinly sliced beef and beef offal
 糖醋里脊 | sweet and sour pork
 烤鸭 | roast duck
-牛肉面 | beef noodle soup
 五花肉 | streaky pork
-麻婆豆腐 | mapo tofu | stir-fried beancurd in chili sauce
 肉夹馍 | meat wedged in steamed bun | "Chinese burger"/sliced meat sandwich popular in north China
 担担面 | dan dan noodles | Sichuan noodles with a spicy and numbing sauce
-鱼香肉丝 | yuxiang pork | pork strips stir-fried with yuxiang ("fish flavoring")
 土豆泥 | mashed potato
 佛跳墙 | Buddha jumps over the wall | name for a Chinese dish that uses many non-vegetarian ingredients
 烧饼 | baked sesame seed-coated cake
@@ -24,7 +26,6 @@
 虾饺 | prawn dumplings
 炸酱面 | zha jiang noodles | ground pork simmered with salty fermented soybean paste (or other sauce) over thick wheat noodles
 杏仁豆腐 | almond junket
-北京烤鸭 | Peking roast duck
 爆肚 | deep fried tripe
 滇红 | Dian Hong tea
 寿桃 | peaches of immortality | fresh or confectionery peaches offered as a birthday gift
@@ -42,7 +43,6 @@
 油条 | youtiao | (deep-fried breadstick)
 燕窝 | swallow's nest
 白切鸡 | Cantonese poached chicken | Cantonese poached chicken, known as white cut chicken
-回锅肉 | twice cooked pork
 甜甜圈 | doughnut
 珍珠奶茶 | pearl milk tea | tapioca milk tea, bubble milk tea
 八公山豆腐 | bang tofu
@@ -353,3 +353,4 @@
 香辣烤鲶鱼 |  fragrant spicy roast catfish
 水煮肉 |  spicy boiled meat
 酸菜鲈鱼 |  pickled vegetables and bass (fish)
+豉油扇贝 | scallops with soy sauce
