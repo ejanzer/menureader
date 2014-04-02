@@ -1,19 +1,16 @@
-from flask import Flask, render_template, request, redirect, url_for, send_from_directory, flash, session
+from flask import Flask, render_template, request, redirect, url_for, send_from_directory, flash, session, send_file
 import json
 import datetime
 import os
 from urllib import urlopen
 from werkzeug.utils import secure_filename
 
-from config import SECRET_KEY
+from config import SECRET_KEY, DISH_IMAGE_PATH, UPLOAD_FOLDER, ALLOWED_EXTENSIONS
 from model.model import Dish, User, Tag
 from tesseract.pytesser import image_file_to_string
 from normalize import preprocess_image, smooth_and_thin_image
 from translate import search_dish_name
 from timing import time_elapsed
-
-UPLOAD_FOLDER = "./image_uploads"
-ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 
 app = Flask(__name__)
 app.secret_key = SECRET_KEY
@@ -134,10 +131,10 @@ def view_user(id):
 def search(text):
     start = datetime.datetime.now()
     print "Searching for text:", text
+    
     # Returns search data for a particular query.
     results = search_dish_name(text)
     time_elapsed("Search and translate", start)
-    print "Results: ", json.dumps(results)
     return json.dumps(results)
 
 @app.route("/review/new", methods=["POST"])
@@ -152,6 +149,11 @@ def view_tag(name):
     data = {}
     data['similar'] = tag.get_dishes()
     return json.dumps(data)
+
+@app.route("/get_image/<string:filename>")
+def send_image(filename):
+    path = os.path.join(DISH_IMAGE_PATH, filename)
+    return send_file(path)
 
 if __name__ == "__main__":
     # Change debug to False when deploying, probably.
