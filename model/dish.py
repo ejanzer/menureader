@@ -55,9 +55,9 @@ class Dish(Base):
             # reviews = [{"username": review.user.username, "date": format_date(review.date), "text": review.text, "restaurant": review.rest_dish.restaurant.name} for review in self.reviews]
             data['reviews'] = reviews
 
-        # if self.images:
-        #     images = [Image.get_json(image.filename) for image in self.images]
-        #     data['images'] = images
+        if self.images:
+            images = [Image.get_json(image.filename) for image in self.images]
+            data['images'] = images
 
         if self.dish_tags:
             tags_dict = {}
