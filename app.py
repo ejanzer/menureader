@@ -106,6 +106,7 @@ def view_dish(id):
     # Will return dish object from database.
     dish = Dish.get_dish_by_id(id)
     data = dish.get_json()
+    print data
     return json.dumps(data)
 
 @app.route("/dish/new", methods=["POST"])
@@ -131,10 +132,11 @@ def view_user(id):
 def search(text):
     start = datetime.datetime.now()
     print "Searching for text:", text
-    
+
     # Returns search data for a particular query.
     results = search_dish_name(text)
     time_elapsed("Search and translate", start)
+    print results
     return json.dumps(results)
 
 @app.route("/review/new", methods=["POST"])
@@ -142,12 +144,13 @@ def add_review():
     # Accepts post data and creates a review object.
     pass
 
-@app.route("/tag/<string:name>")
-def view_tag(name):
+@app.route("/tag/<tag_id>")
+def view_tag(tag_id):
     # View all dishes for a certain tag.
-    tag = Tag.get_tag_by_name(name)
+    tag = Tag.get_tag_by_id(tag_id)
     data = {}
     data['similar'] = tag.get_dishes()
+    print data
     return json.dumps(data)
 
 @app.route("/get_image/<string:filename>")

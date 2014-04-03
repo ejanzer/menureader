@@ -21,18 +21,18 @@ class Dish(Base):
     def get_json(self):
         data = {}
             
-        dish = [
-                {'title':'Chinese', 'data': self.chin_name},
-                {'title': 'English', 'data': self.eng_name},
-                ]
+        dish = {
+            'chin_name': self.chin_name,
+            'eng_name': self.eng_name
+        }
 
         if self.desc:
-            dish.append({'title': 'description', 'data': self.desc})
+            dish['desc'] = self.desc
 
         if self.pinyin:
-            dish.append({'title': 'pinyin', 'data': self.pinyin})
+            dish['pinyin'] = self.pinyin
 
-        data['dish'] = dish
+        data['dish'] = [dish]
 
         if self.reviews:
             reviews = []
@@ -55,28 +55,28 @@ class Dish(Base):
             # reviews = [{"username": review.user.username, "date": format_date(review.date), "text": review.text, "restaurant": review.rest_dish.restaurant.name} for review in self.reviews]
             data['reviews'] = reviews
 
-        if self.images:
-            images = [Image.get_json(image.filename) for image in self.images]
-            data['images'] = images
+        # if self.images:
+        #     images = [Image.get_json(image.filename) for image in self.images]
+        #     data['images'] = images
 
         if self.dish_tags:
             tags_dict = {}
             for dish_tag in self.dish_tags:
                 name = dish_tag.tag.name
-                tag_id = dish_tag.tag.id
+                tag_id = str(dish_tag.tag.id)
                 if tags_dict.get(name):
-                    tags_dict[name] += 1
+                    tags_dict[tag_id]['count'] += 1
                 else:
-                    tags_dict[name] = 1
+                    tags_dict[tag_id] = {'name': name, 'count': 1}
 
-            tags = [{'tag': name, 'count': str(count)} for name, count in tags_dict.iteritems()]
+            tags = [{'name': tag_data['name'], 'count': str(tag_data['count']), 'id': tag_id} for tag_id, tag_data in tags_dict.iteritems()]
             data['tags'] = tags
 
         print data.keys()
         return data
 
     def get_json_min(self):
-        similar = {'title': self.chin_name, 'data': self.eng_name }
+        similar = {'chinese': self.chin_name, 'english': self.eng_name, 'id': self.id }
         return similar
 
     @staticmethod
