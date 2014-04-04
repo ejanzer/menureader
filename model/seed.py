@@ -129,7 +129,7 @@ def seed_reviews():
     add_review(1, 1, 4, 4, "Really good. Beef is a little fatty, but homemade noodles are delicious. Huge portions!")
 
     ##### Add a review for Hot and Sour Soup at Queen House from Nick. #####
-    add_review(2, 199, 4, 4, "Delicious!")
+    add_review(2, 199, 4, 5, "Delicious!")
 
     ##### Add a review for mapo tofu at Chef Zhao's from Emily. #####
     add_review(1, 2, 1, 1, "Tastes just like Chen's mapo tofu in Chengdu!")
