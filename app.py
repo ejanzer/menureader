@@ -5,7 +5,7 @@ import os
 from urllib import urlopen
 from werkzeug.utils import secure_filename
 
-from config import SECRET_KEY, DISH_IMAGE_PATH, UPLOAD_FOLDER, ALLOWED_EXTENSIONS
+from config import SECRET_KEY, DISH_IMAGE_PATH, UPLOAD_FOLDER, ALLOWED_EXTENSIONS, LANG
 from model.model import Dish, User, Tag
 from tesseract.pytesser import image_file_to_string
 from normalize import preprocess_image, smooth_and_thin_image
@@ -89,7 +89,7 @@ def upload():
             smooth_and_thin_image(image_path)
 
             # try running through tesseract again
-            text = image_file_to_string(image_path, lang="chi_sim", graceful_errors=True)
+            text = image_file_to_string(image_path, lang=LANG, graceful_errors=True)
             text = text.strip()
             start = time_elapsed("Tesseract", start)
 

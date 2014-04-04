@@ -6,3 +6,4 @@ SECRET_KEY = os.environ.get("SECRET_KEY", "shhhhhhhhh")
 DISH_IMAGE_PATH = os.environ.get("DISH_IMAGE_PATH", './dish_images/')
 UPLOAD_FOLDER = os.environ.get("IMAGE_UPLOAD_PATH", './image_uploads/')
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
+LANG = "chi_sim"
