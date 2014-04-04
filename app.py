@@ -106,7 +106,6 @@ def view_dish(id):
     # Will return dish object from database.
     dish = Dish.get_dish_by_id(id)
     data = dish.get_json()
-    print data
     return json.dumps(data)
 
 @app.route("/dish/new", methods=["POST"])
@@ -114,7 +113,6 @@ def add_dish():
     # Takes post data and creates a new dish in the database.
     user_id = session.get("user_id")
     pass
-
 
 @app.route("/restaurant/<int:id>")
 def view_restaurant(id):
@@ -136,7 +134,6 @@ def search(text):
     # Returns search data for a particular query.
     results = search_dish_name(text)
     time_elapsed("Search and translate", start)
-    print results
     return json.dumps(results)
 
 @app.route("/review/new", methods=["POST"])
@@ -150,7 +147,6 @@ def view_tag(tag_id):
     tag = Tag.get_tag_by_id(tag_id)
     data = {}
     data['similar'] = tag.get_dishes()
-    print data
     return json.dumps(data)
 
 @app.route("/get_image/<string:filename>")
