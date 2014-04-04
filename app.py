@@ -5,7 +5,7 @@ import os
 from urllib import urlopen
 from werkzeug.utils import secure_filename
 
-from config import SECRET_KEY, DISH_IMAGE_PATH, UPLOAD_FOLDER, ALLOWED_EXTENSIONS, LANG
+from config import SECRET_KEY, DISH_IMAGE_PATH, UPLOAD_FOLDER, ALLOWED_EXTENSIONS, LANG, PORT
 from model.model import Dish, User, Tag
 from tesseract.pytesser import image_file_to_string
 from normalize import preprocess_image, smooth_and_thin_image
@@ -156,5 +156,4 @@ def send_image(filename):
 
 if __name__ == "__main__":
     # Change debug to False when deploying, probably.
-    app.run(debug = True)
-
+    app.run(host='0.0.0.0', port=PORT, debug=True)
