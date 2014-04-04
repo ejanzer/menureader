@@ -98,7 +98,6 @@ def upload():
                 error_data = {"error": "No results found. Please try again."}
                 return json.dumps(error_data)
 
-        print "Received text from Tesseract: ", text
         return redirect(url_for("search", text=text))
 
 @app.route("/dish/<int:id>")
@@ -129,7 +128,6 @@ def view_user(id):
 @app.route("/search/<string:text>")
 def search(text):
     start = datetime.datetime.now()
-    print "Searching for text:", text
 
     # Returns search data for a particular query.
     results = search_dish_name(text)
