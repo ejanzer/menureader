@@ -40,8 +40,8 @@ def find_words(text):
     return total_combos
 
 def check_words(combinations):
-    # Go through all the combinations of words and find their definitions using
-    # food_words and the dictionary.
+    """Go through all the combinations of words and find their definitions using
+    food_words and the dictionary."""
     translations = []
     for c in combinations:
         translation = []
@@ -78,9 +78,55 @@ def translate(text):
     start = time_elapsed("Check words", start)
     return results
 
-def find_substitutes(text):
-    # Try to guess what incorrect characters might be
 
+def search_dish_name(text):
+    """Searches for text in the dishes database. If not found, translates text and
+    looks for similar dishes in database. Returns JSON data for dish or search results."""
+
+    # timing information, can delete later.
+    start = dt.datetime.now()
+
+    results = {}
+    if type(text) != unicode:
+        text = text.decode('utf-8')
+    if len(text) > 10:
+        # Most dish names are 3-5 characters. 
+        # If Tesseract returned more than 10 characters, something probably went wrong.
+        print "Input text is too long."
+        return None
+    else:
+        # Find a matching dish, if it exists.
+        match = Dish.find_match(text)
+        if match:
+            # If result is found, return JSON representation of dish.
+            results = match.get_json()
+            start = time_elapsed("Dish lookup", start)
+        else:
+            # If no dish is found, return translation data and similar dishes, if they exist.
+            translation = translate(text)
+            start = time_elapsed("Translation", start)
+            results['translation'] = translation
+
+            # Find similar dishes and add to results.
+            if len(text) > 1:
+                similar_dishes = Dish.find_similar(text)
+                start = time_elapsed("Similar dish lookup", start)
+                similar_json = []            
+                for similar_dish in similar_dishes:
+                    dish_data = similar_dish.get_json_min()
+                    print dish_data
+                    similar_json.append(dish_data)
+
+                if similar_json != []:
+                    results['similar'] = similar_json
+
+    return results
+
+##### UNUSED FUNCTIONS #######
+# I was contemplating using Markov chains for text correction, but 
+# I haven't implemented that yet.
+def find_substitutes(text):
+    """Try to guess what incorrect characters might be..."""
     if CHAINS == {}:
         generate_food_chains()
 
@@ -113,42 +159,6 @@ def find_substitutes(text):
 
                 candidates = []
     return subs
-
-
-def search_dish_name(text):
-    start = dt.datetime.now()
-
-    results = {}
-    if type(text) != unicode:
-        text = text.decode('utf-8')
-    if len(text) > 10:
-        print "Input text is too long."
-        return None
-    else:
-        # Find a matching dish, if it exists.
-        match = Dish.find_match(text)
-        if match:
-            results = match.get_json()
-            start = time_elapsed("Dish lookup", start)
-        else:
-            translation = translate(text)
-            start = time_elapsed("Translation", start)
-            results['translation'] = translation
-
-            # Find similar dishes and add to results.
-            if len(text) > 1:
-                similar_dishes = Dish.find_similar(text)
-                start = time_elapsed("Similar dish lookup", start)
-                similar_json = []            
-                for similar_dish in similar_dishes:
-                    dish_data = similar_dish.get_json_min()
-                    print dish_data
-                    similar_json.append(dish_data)
-
-                if similar_json != []:
-                    results['similar'] = similar_json
-
-    return results
 
 def generate_food_chains():
     words = []

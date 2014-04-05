@@ -92,15 +92,6 @@ TEMPLATES = [D1, D2, D3, D4, D5, U1, U2, U3, U4, U5]
 
 ########### STANDARD PREPROCESSING ###########
 
-# TODO: check if the image is really an image, for security purposes.
-def check_image(im):
-    pass
-
-# TODO: Check if an image has a dark background and white foreground.
-# If so, invert it.
-def sample_corners(im):
-    pass
-
 def smooth_and_grayscale(im):
     """Prepare an image for processing by running through a smoothing filter and 
     converting to grayscale"""
@@ -111,7 +102,6 @@ def smooth_and_grayscale(im):
         im = im.convert('L')
 
     return im
-
 
 ########### THRESHOLDING/IMAGE BINARIZATION ###########
 def binarize(im):
@@ -272,9 +262,20 @@ def check_template(pix, i, j, template):
     return True
 
 
+###### UNUSED FUNCTIONS ######
+
+# TODO: check if the image is really an image, for security purposes.
+def check_image(im):
+    pass
+
+# TODO: Check if an image has a dark background and white foreground.
+# If so, invert it.
+def sample_corners(im):
+    pass
+
 ######## MAIN FUNCTION #########
 def preprocess_image(path):
-    """Do preprocessing on image before sending to Tesseract."""
+    """Do standard preprocessing on image before sending to Tesseract."""
     start = dt.datetime.now()
 
     # Steps using PIL
@@ -289,7 +290,7 @@ def preprocess_image(path):
     im.save(path)
 
 def smooth_and_thin_image(path):
-    """Thin image"""
+    """Extra preprocessing, including smoothing, acute angle emphasis and thinning."""
 
     start = dt.datetime.now()
 

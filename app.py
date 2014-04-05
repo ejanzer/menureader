@@ -22,6 +22,112 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 def index():
     return render_template("index.html")
 
+@app.route("/upload", methods=["POST"])
+def upload():
+    """Handler for uploading an image, processing and sending to Tesseract."""
+
+    if request.data:
+        file = request.data
+        now = datetime.datetime.utcnow()
+
+        # Create a unique filename for the image.
+        filename = now.strftime('%Y%m%d%M%S') + '.png'
+        image_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+
+        # write the image data to the file
+        with open(image_path, 'wb') as f:
+            f.write(file)
+
+        # timing information for performance, can delete later
+        start = datetime.datetime.now()
+        start = time_elapsed("Writing file", start)
+
+        # do some preprocessing on the image to optimize it for Tesseract
+        preprocess_image(image_path)
+        start = time_elapsed("Preprocessing", start)
+
+        # run the image through tesseract and extract text
+        text = image_file_to_string(image_path, lang="chi_sim", graceful_errors=True)
+        text = text.strip()
+        start = time_elapsed("Tesseract", start)
+
+        if not text:
+            # if Tesseract returns nothing, do some additional processing to see if results improve.
+            smooth_and_thin_image(image_path)
+
+            # run through tesseract again
+            text = image_file_to_string(image_path, lang=LANG, graceful_errors=True)
+            text = text.strip()
+            start = time_elapsed("Tesseract", start)
+
+            if not text:
+                # if still no text from Tesseract, send an error to the client
+                error_data = {"error": "No results found. Please try again."}
+                return json.dumps(error_data)
+
+        # if text was received, redirect to search
+        return redirect(url_for("search", text=text))
+
+@app.route("/search/<string:text>")
+def search(text):
+    """Takes a string and returns dish information or translation"""
+
+    # timing information, can delete later
+    start = datetime.datetime.now()
+
+    # Returns search data for a particular query.
+    results = search_dish_name(text)
+    time_elapsed("Search and translate", start)
+
+    return json.dumps(results)
+
+@app.route("/dish/<int:id>")
+def view_dish(id):
+    """Get data for a certain dish, including reviews, images, and tags."""
+    dish = Dish.get_dish_by_id(id)
+    data = dish.get_json()
+    return json.dumps(data)
+
+@app.route("/tag/<tag_id>")
+def view_tag(tag_id):
+    # View all dishes for a certain tag.
+    tag = Tag.get_tag_by_id(tag_id)
+    data = {}
+    data['similar'] = tag.get_dishes()
+    return json.dumps(data)
+
+
+###### FUNCTIONS NOT CURRENTLY IN USE #######
+@app.route("/get_image/<string:filename>")
+def send_image(filename):
+    # Return a specific image
+    path = os.path.join(DISH_IMAGE_PATH, filename)
+    return send_file(path)
+
+@app.route("/dish/new", methods=["POST"])
+def add_dish():
+    # Takes post data and creates a new dish in the database.
+    user_id = session.get("user_id")
+    pass
+
+@app.route("/restaurant/<int:id>")
+def view_restaurant(id):
+    # Returns restaurant object.
+    pass
+
+@app.route("/user/<int:id>")
+def view_user(id):
+    # Returns user data (not the password)
+    user = User.get_user_by_id(id)
+    data = User.get_json(user)
+    return json.dumps(data)
+
+
+@app.route("/review/new", methods=["POST"])
+def add_review():
+    # Accepts post data and creates a review object.
+    pass
+
 @app.route("/login", methods=["POST"])
 def login():
     # Login form should be handled by view controller.
@@ -57,100 +163,6 @@ def signup():
     response = User.create_user(username, password, password_verify)
 
     return response
-
-@app.route("/upload", methods=["POST"])
-def upload():
-    if request.data:
-        file = request.data
-        now = datetime.datetime.utcnow()
-        filename = now.strftime('%Y%m%d%M%S') + '.png'
-        print filename
-
-        image_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-        print image_path
-
-        with open(image_path, 'wb') as f:
-            f.write(file)
-
-        start = datetime.datetime.now()
-        start = time_elapsed("Writing file", start)
-
-        # do some preprocessing on the image to optimize it for Tesseract
-        preprocess_image(image_path)
-        start = time_elapsed("Preprocessing", start)
-
-        # run the image through tesseract and extract text
-        text = image_file_to_string(image_path, lang="chi_sim", graceful_errors=True)
-        text = text.strip()
-        start = time_elapsed("Tesseract", start)
-
-        if not text:
-            # try thinning the image to see if it improves results from Tesseract
-            smooth_and_thin_image(image_path)
-
-            # try running through tesseract again
-            text = image_file_to_string(image_path, lang=LANG, graceful_errors=True)
-            text = text.strip()
-            start = time_elapsed("Tesseract", start)
-
-            if not text:
-                print "No text received from Tesseract!"
-                error_data = {"error": "No results found. Please try again."}
-                return json.dumps(error_data)
-
-        return redirect(url_for("search", text=text))
-
-@app.route("/dish/<int:id>")
-def view_dish(id):
-    # Will return dish object from database.
-    dish = Dish.get_dish_by_id(id)
-    data = dish.get_json()
-    return json.dumps(data)
-
-@app.route("/dish/new", methods=["POST"])
-def add_dish():
-    # Takes post data and creates a new dish in the database.
-    user_id = session.get("user_id")
-    pass
-
-@app.route("/restaurant/<int:id>")
-def view_restaurant(id):
-    # Returns restaurant object.
-    pass
-
-@app.route("/user/<int:id>")
-def view_user(id):
-    # Returns user data (not the password)
-    user = User.get_user_by_id(id)
-    data = User.get_json(user)
-    return json.dumps(data)
-
-@app.route("/search/<string:text>")
-def search(text):
-    start = datetime.datetime.now()
-
-    # Returns search data for a particular query.
-    results = search_dish_name(text)
-    time_elapsed("Search and translate", start)
-    return json.dumps(results)
-
-@app.route("/review/new", methods=["POST"])
-def add_review():
-    # Accepts post data and creates a review object.
-    pass
-
-@app.route("/tag/<tag_id>")
-def view_tag(tag_id):
-    # View all dishes for a certain tag.
-    tag = Tag.get_tag_by_id(tag_id)
-    data = {}
-    data['similar'] = tag.get_dishes()
-    return json.dumps(data)
-
-@app.route("/get_image/<string:filename>")
-def send_image(filename):
-    path = os.path.join(DISH_IMAGE_PATH, filename)
-    return send_file(path)
 
 if __name__ == "__main__":
     # Change debug to False when deploying, probably.
