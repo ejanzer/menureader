@@ -43,7 +43,7 @@ Add language training data to your tessdata directory (usually at /usr/local/sha
 
 * [Simplified characters](https://tesseract-ocr.googlecode.com/files/chi_sim.traineddata.gz)
 * [English](https://tesseract-ocr.googlecode.com/files/tesseract-ocr-3.02.eng.tar.gz) – for testing purposes
-* [Traditional characters](https://tesseract-ocr.googlecode.com/files/chi_tra.traineddata.gz)(Note: to use traditional characters, you'll need to also set LANG to 'chi_tra' in config.py.
+* [Traditional characters](https://tesseract-ocr.googlecode.com/files/chi_tra.traineddata.gz) (Note: to use traditional characters, you'll need to also set LANG to 'chi_tra' in config.py.)
 
 Make sure Tesseract is installed properly by running pytesser on the test images:
 
