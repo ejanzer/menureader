@@ -41,11 +41,9 @@ Install [Google Tesseract OCR](https://code.google.com/p/tesseract-ocr/)
 
 Add language training data to your tessdata directory (usually at /usr/local/share/tessdata - if not, just set your TESSDATA_PREFIX environment variable to the parent directory of the tessdata directory):
 
-<ul>
-    <li>[Simplified characters](https://tesseract-ocr.googlecode.com/files/chi_sim.traineddata.gz)</li>
-    <li>[Traditional characters](https://tesseract-ocr.googlecode.com/files/chi_tra.traineddata.gz)(Note: to use traditional characters, you'll need to also set LANG to 'chi_tra' in config.py.</li>
-    <li>[English](https://tesseract-ocr.googlecode.com/files/tesseract-ocr-3.02.eng.tar.gz) – for testing purposes</li>
-</ul>
+*[Simplified characters](https://tesseract-ocr.googlecode.com/files/chi_sim.traineddata.gz)
+*[English](https://tesseract-ocr.googlecode.com/files/tesseract-ocr-3.02.eng.tar.gz) – for testing purposes
+*[Traditional characters](https://tesseract-ocr.googlecode.com/files/chi_tra.traineddata.gz)(Note: to use traditional characters, you'll need to also set LANG to 'chi_tra' in config.py.
 
 Make sure Tesseract is installed properly by running pytesser on the test images:
 
