@@ -19,11 +19,11 @@ This repository contains the code for the Python server. For the iOS application
 
     ![Screenshot 4: Dish information](https://raw.githubusercontent.com/ejanzer/menureader/master/screenshots/app4.jpg)
 
-4a. If the dish exists, the server will return some information about the dish. Tap on a tag to see other dishes with the same tag.
+4. If the dish exists, the server will return some information about the dish. Tap on a tag to see other dishes with the same tag.
 
     ![Screenshot 5: Reviews and tags](https://raw.githubusercontent.com/ejanzer/menureader/master/screenshots/app5.jpg)
 
-4b. If the dish doesn’t exist, the server will try to translate the dish name using [CEDICT](http://cc-cedict.org/wiki/). Tap on a similar dish to go to that dish’s page.
+5. If the dish doesn’t exist, the server will try to translate the dish name using [CEDICT](http://cc-cedict.org/wiki/). Tap on a similar dish to go to that dish’s page.
 
 ### How it works
 
