@@ -5,9 +5,10 @@ Chinese Menu Reader is an iOS application that takes a picture of a dish name on
 This repository contains the code for the Python server. For the iOS application, [check out this repository](https://github.com/ejanzer/menureader_ios).
 
 ### How to use it
-![Screenshot 1: Open the app](https://raw.githubusercontent.com/ejanzer/menureader/master/screenshots/app1.jpg)
 
 1. Take a photo of a menu or choose one from your photo library.
+
+    ![Screenshot 1: Open the app](https://raw.githubusercontent.com/ejanzer/menureader/master/screenshots/app1.jpg)
 
     ![Screenshot 2: Take a photo](https://raw.githubusercontent.com/ejanzer/menureader/master/screenshots/app2.jpg)
 
