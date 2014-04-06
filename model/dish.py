@@ -37,12 +37,6 @@ class Dish(Base):
         if self.reviews:
             reviews = []
             for review in self.reviews:
-                print review
-                print "Rest dish id: ", review.rest_dish.id
-                print review.rest_dish.restaurant
-                print review.rest_dish.rest_id
-                print review.rest_dish.dish_id
-                print review.rest_dish.dish.eng_name
                 review_data = {
                     'username': review.user.username,
                     'date': format_date(review.date),
@@ -72,7 +66,6 @@ class Dish(Base):
             tags = [{'name': tag_data['name'], 'count': str(tag_data['count']), 'id': tag_id} for tag_id, tag_data in tags_dict.iteritems()]
             data['tags'] = tags
 
-        print data.keys()
         return data
 
     def get_json_min(self):

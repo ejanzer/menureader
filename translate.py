@@ -114,7 +114,6 @@ def search_dish_name(text):
                 similar_json = []            
                 for similar_dish in similar_dishes:
                     dish_data = similar_dish.get_json_min()
-                    print dish_data
                     similar_json.append(dish_data)
 
                 if similar_json != []:
@@ -135,11 +134,9 @@ def find_substitutes(text):
     for i in range(len(text)):
         char = text[i]
         if CHAINS.get(char):
-            print "found char %s" % char
             candidates = []
             candidates = CHAINS[char]
         else:
-            print "didn't find char %s" % char
             if candidates != []:
                 # choose the most popular option from candidates
                 counts = {}
