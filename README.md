@@ -9,19 +9,19 @@ This repository contains the code for the Python server. For the iOS application
 
 1. Take a photo of a menu or choose one from your photo library.
 
-![Screenshot 2: Take a photo](https://raw.githubusercontent.com/ejanzer/menureader/master/screenshots/app2.jpg)
+    ![Screenshot 2: Take a photo](https://raw.githubusercontent.com/ejanzer/menureader/master/screenshots/app2.jpg)
 
 2. Crop the image around the dish you’d like to look up.
 
-![Screenshot 3: Crop the image](https://raw.githubusercontent.com/ejanzer/menureader/master/screenshots/app3.jpg)
+    ![Screenshot 3: Crop the image](https://raw.githubusercontent.com/ejanzer/menureader/master/screenshots/app3.jpg)
 
 3. Tap “Search” to upload the image to the server.
 
-![Screenshot 4: Dish information](https://raw.githubusercontent.com/ejanzer/menureader/master/screenshots/app4.jpg)
+    ![Screenshot 4: Dish information](https://raw.githubusercontent.com/ejanzer/menureader/master/screenshots/app4.jpg)
 
 4a. If the dish exists, the server will return some information about the dish. Tap on a tag to see other dishes with the same tag.
 
-![Screenshot 5: Reviews and tags](https://raw.githubusercontent.com/ejanzer/menureader/master/screenshots/app5.jpg)
+    ![Screenshot 5: Reviews and tags](https://raw.githubusercontent.com/ejanzer/menureader/master/screenshots/app5.jpg)
 
 4b. If the dish doesn’t exist, the server will try to translate the dish name using [CEDICT](http://cc-cedict.org/wiki/). Tap on a similar dish to go to that dish’s page.
 
@@ -35,33 +35,33 @@ If Tesseract returns characters, the server looks them up first in a dishes tabl
 
 1. Clone the repository:
 
-<code>$ git clone https://github.com/ejanzer/menureader.git</code>
+    <code>$ git clone https://github.com/ejanzer/menureader.git</code>
 
 2. Install [Google Tesseract OCR](https://code.google.com/p/tesseract-ocr/).
 
 3. Add language training data to your tessdata directory (usually at /usr/local/share/tessdata - if not, just set your TESSDATA_PREFIX environment variable to the parent directory of the tessdata directory):
 
-* [Simplified characters](https://tesseract-ocr.googlecode.com/files/chi_sim.traineddata.gz)
-* [English](https://tesseract-ocr.googlecode.com/files/tesseract-ocr-3.02.eng.tar.gz) – for testing purposes
-* [Traditional characters](https://tesseract-ocr.googlecode.com/files/chi_tra.traineddata.gz) (Note: to use traditional characters, you'll need to also set LANG to 'chi_tra' in config.py.)
+    * [Simplified characters](https://tesseract-ocr.googlecode.com/files/chi_sim.traineddata.gz)
+    * [English](https://tesseract-ocr.googlecode.com/files/tesseract-ocr-3.02.eng.tar.gz) – for testing purposes
+    * [Traditional characters](https://tesseract-ocr.googlecode.com/files/chi_tra.traineddata.gz) (Note: to use traditional characters, you'll need to also set LANG to 'chi_tra' in config.py.)
 
 4. Make sure Tesseract is installed properly by running pytesser on the test images:
 
-<code>$ python tesseract/pytesser.py</code>
+    <code>$ python tesseract/pytesser.py</code>
 
 5. Install Python packages:
 
-<code>$ pip install -r requirements.txt</code>
+    <code>$ pip install -r requirements.txt</code>
 
 6. Run the app:
 
-<code>$ python app.py</code>
+    <code>$ python app.py</code>
 
 7. Deploy the app or use [ngrok](https://ngrok.com/) to forward your port:
 
-<code>$ ./ngrok 5000</code>
+    <code>$ ./ngrok 5000</code>
 
-In the [iOS Xcode project](https://github.com/ejanzer/menureader_ios), change the server URL to the server's address ([see instructions on iOS repo for details](https://github.com/ejanzer/menureader_ios)).
+8. In the [iOS Xcode project](https://github.com/ejanzer/menureader_ios), change the server URL to the server's address ([see instructions on iOS repo for details](https://github.com/ejanzer/menureader_ios)).
 
 ### Notes
 
