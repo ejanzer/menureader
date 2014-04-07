@@ -166,4 +166,4 @@ def signup():
 
 if __name__ == "__main__":
     # Change debug to False when deploying, probably.
-    app.run(host='0.0.0.0', port=PORT, debug=True)
+    app.run(host='0.0.0.0', port=PORT, debug=False)
