@@ -166,6 +166,41 @@ def seed_tags():
 
     db_session.commit()
 
+def create_new_tag(dish_id, rest_id, tag_id):
+    """Add more tags"""
+    rest_dish = Rest_Dish(dish_id=dish_id, rest_id=rest_id)
+    db_session.add(rest_dish)
+    db_session.commit()
+
+    dish_tag = Dish_Tag(dish_id=dish_id, tag_id=tag_id, rest_dish_id=rest_dish.id)
+    db_session.add(dish_tag)
+    db_session.commit()
+
+def seed_additional_tags():
+    """Add some more tags"""
+
+    # Tag yuxiang eggplant as vegetarian
+    create_new_tag(dish_id=327, rest_id=1, tag_id=5)
+
+    # Tag Mapo tofu as having beef
+    create_new_tag(2, 1, 4)
+
+    # Tag maoxuewang as having pork
+    create_new_tag(6, 1, 3)
+
+    # Tag kung pao chicken has being spicy, again
+    create_new_tag(3, 1, 1)
+
+    # Tag kung pao chicken as having chicken
+    create_new_tag(3, 1, 2)
+
+    # Tag chongqing chicken as being spicy
+    create_new_tag(83, 1, 1)
+
+    # Tag chongqing chicken has having chicken
+    create_new_tag(83, 1, 2)
+
+
 def seed_images():
     with open("seeds/images_seed.txt") as f:
         reader = csv.reader(f, delimiter="|")
@@ -191,6 +226,7 @@ if __name__ == "__main__":
     # seed_tags()
     # seed_restaurants()
     # seed_reviews()
+    # seed_additional_tags()
     # seed_images()
     pass
 
