@@ -4,6 +4,11 @@ Chinese Menu Reader is a mobile application that takes a picture of a dish name 
 
 This repository contains the code for the Python server. For the iOS application, [check out this repository](https://github.com/ejanzer/menureader_ios).
 
+![Crop an image](https://raw.githubusercontent.com/ejanzer/menureader/master/screenshots/app3.jpg)
+![Dish information](https://raw.githubusercontent.com/ejanzer/menureader/master/screenshots/app4.jpg)
+![Reviews and tags](https://raw.githubusercontent.com/ejanzer/menureader/master/screenshots/app5.jpg)
+
+
 ### How it works
 
 The iOS application takes the image, crops it, and uploads it to the Python server. The Python server does some basic image processing (smoothing, converting to grayscale, binarizing/thresholding) and then uses [Google Tesseract OCR](https://code.google.com/p/tesseract-ocr/) to get a string of Chinese characters from the image. If Tesseract fails to recognize any characters in the image, the server thins the image (using Stentiford's preprocessing steps and Scikit-Image's skeletonize() function) and runs it through Tesseract again. 
@@ -41,28 +46,6 @@ If Tesseract returns characters, the server looks them up first in a dishes tabl
     <code>$ ./ngrok 5000</code>
 
 8. In the [iOS Xcode project](https://github.com/ejanzer/menureader_ios), change the server URL to the server's address ([see instructions on iOS repo for details](https://github.com/ejanzer/menureader_ios)).
-
-### How to use it
-
-1. Take a photo of a menu or choose one from your photo library.
-
-    ![Screenshot 1: Open the app](https://raw.githubusercontent.com/ejanzer/menureader/master/screenshots/app1.jpg)
-
-    ![Screenshot 2: Take a photo](https://raw.githubusercontent.com/ejanzer/menureader/master/screenshots/app2.jpg)
-
-2. Crop the image around the dish you’d like to look up.
-
-    ![Screenshot 3: Crop the image](https://raw.githubusercontent.com/ejanzer/menureader/master/screenshots/app3.jpg)
-
-3. Tap “Search” to upload the image to the server.
-
-    ![Screenshot 4: Dish information](https://raw.githubusercontent.com/ejanzer/menureader/master/screenshots/app4.jpg)
-
-4. If the dish exists, the server will return some information about the dish. Tap on a tag to see other dishes with the same tag.
-
-    ![Screenshot 5: Reviews and tags](https://raw.githubusercontent.com/ejanzer/menureader/master/screenshots/app5.jpg)
-
-5. If the dish doesn’t exist, the server will try to translate the dish name using [CEDICT](http://cc-cedict.org/wiki/). Tap on a similar dish to go to that dish’s page.
 
 ### Notes
 
